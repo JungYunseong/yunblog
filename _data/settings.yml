@@ -35,7 +35,7 @@ author:
   title: Hello I’m Jung Yunseong
   bio: I am a student who dreams of becoming a full-stack designer including development and business. When I’m not working, I’m probably listening to relaxing music or traveling somewhere.
   image: '/images/01.jpg'
-  avatar: '/images/avatar.jpg'
+  avatar: '/images/avatar1.jpg'
   button__text: See my works
 
 
@@ -50,28 +50,28 @@ projects__settings:
 #-------------------------------
 # Testimonials Section
 
-testimonial__title: My Happy <span class="text-span">Clients</span> # Add a 'text-span' class to highlight text.
+# testimonial__title: My Happy <span class="text-span">Clients</span> # Add a 'text-span' class to highlight text.
 
-testimonial-items:
-  - name: "Zaire Baptista"
-    image: "/images/client-1.jpg"
-    designation : "Traveler"
-    content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
+# testimonial-items:
+#   - name: "Zaire Baptista"
+#     image: "/images/client-1.jpg"
+#     designation : "Traveler"
+#     content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
 
-  - name: "Ann Philips"
-    image: "/images/client-2.jpg"
-    designation : "Designer"
-    content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
+#   - name: "Ann Philips"
+#     image: "/images/client-2.jpg"
+#     designation : "Designer"
+#     content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
 
-  - name: "Roger Bergson"
-    image: "/images/client-3.jpg"
-    designation : "CEO, Founder"
-    content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
+#   - name: "Roger Bergson"
+#     image: "/images/client-3.jpg"
+#     designation : "CEO, Founder"
+#     content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
 
-  - name: "Julie Arnold"
-    image: "/images/client-4.jpg"
-    designation : "Full stack developer"
-    content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
+#   - name: "Julie Arnold"
+#     image: "/images/client-4.jpg"
+#     designation : "Full stack developer"
+#     content : "Quamquam id quidem, infinitum est in hac urbe, Ita multo sanguine profuso in laetitia et in victoria est mortuus. Atqui pugnantibus et contrariis consiliisque."
 
 
 #-------------------------------
@@ -86,7 +86,7 @@ blog__settings:
 # Contact Settings
 
 contact__settings:
-  contact__email: your@email.com # Add your email for contact form
+  contact__email: cysseo1@naver.com # Add your email for contact form
   contact__title: <span class="text-span">Get</span> in touch # Add a title to your form
   contact__description: Avenco comes with a built-in contact form. # Add a description to your form
 
