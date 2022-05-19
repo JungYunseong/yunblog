@@ -3,7 +3,7 @@
 
 title: Yunseong's Blog
 logo: # You can add own logo. For example '/images/logo.png'.
-description: This is Yunseong's Blog
+description: 정윤성 블로그
 
 menu__settings:
   menu__items:
@@ -13,12 +13,13 @@ menu__settings:
       url: '/projects/'
     - title: 'Blog'
       url: '/blog/'
-    - title: 'Pages'
-      submenu:
-      - url: '/about'
-        title: 'About'
-      - url: '/elements'
-        title: 'Elements'
+      # submenu:
+      # - url: '/blog'
+      #   title: 'Swift'
+      # - url: '/elements'
+      #   title: 'HIG'
+    - title: 'About'
+      url: '/about/'
 
 # Call to action button
 cta__button__text: Get in touch
@@ -33,7 +34,7 @@ cover__image: '/images/37.jpg'
 author:
   name: Jung Yunseong
   title: Hello I’m Jung Yunseong
-  bio: I am a student who dreams of becoming a full-stack designer including development and business. When I’m not working, I’m probably listening to relaxing music or traveling somewhere.
+  bio: 반갑습니다! 저는 기획, 디자인, 개발 모든 것을 다 하는 풀스택 디자이너를 꿈꾸는 대학생입니다. 여가시간에는 주로 음악감상을 즐기고, 여행을 다니며 사진 찍는 것을 좋아합니다.
   image: '/images/01.jpg'
   avatar: '/images/avatar1.jpg'
   button__text: See my works
@@ -44,7 +45,7 @@ author:
 
 projects__settings:
   projects__title: Latest <span class="text-span">Works</span> # Add a 'text-span' class to highlight text.
-  projects__description: I shows only the best websites and portfolios built completely with passion, simplicity & creativity!
+  projects__description: 현재까지 쌓아온 디자인 관련지식, 경험을 활용해 다양한 분야에 도전하고 있습니다.
 
 
 #-------------------------------
@@ -75,7 +76,7 @@ projects__settings:
 
 
 #-------------------------------
-# Blog Section
+# Blog SectionJoin
 
 blog__settings:
   blog__title: Recent <span class="text-span">Blog</span> Posts # Add a 'text-span' class to highlight text.
@@ -88,7 +89,7 @@ blog__settings:
 contact__settings:
   contact__email: cysseo1@naver.com # Add your email for contact form
   contact__title: <span class="text-span">Get</span> in touch # Add a title to your form
-  contact__description: Avenco comes with a built-in contact form. # Add a description to your form
+  contact__description: 문의는 아래 양식을 사용하여 이메일로 보내주시기 바랍니다. # Add a description to your form
 
 # NOTE
 # Avenco comes with a built-in contact form, that you can use with Formspree service to handle up to 50 submissions per month for free. You could also easily switch to another contact form service if you want.
@@ -97,8 +98,8 @@ contact__settings:
 #-------------------------------
 # Newsletter Settings
 mailchimp__settings:
-  mailchimp__title: <span class="text-span">Join</span> my mailing list # Add your title
-  mailchimp__text: " 'Get inspiration, updates and', 'cool stuff about design!' " # Add descriptions to the form by wrapping the text in single quotes. If you want to use more than one sentence, be sure to separate them with a comma.
+  mailchimp__title: <span class="text-span">Thanks</span> for visiting # Add your title
+  mailchimp__text: " '방문해주셔서 감사합니다.', '오늘도 화이팅!' " # Add descriptions to the form by wrapping the text in single quotes. If you want to use more than one sentence, be sure to separate them with a comma.
   mailchimp__identifier: # Add your MailChimp form identifier. For example - blogenjoyfreedom.us16.list-manage.com/subscribe/post?u=cd56155d76ddeeb4c0bc4d080&amp;id=7a526cd13e
   mailchimp__button__text: Subscribe # Add your button text
 
@@ -119,9 +120,9 @@ google-analytics: G-Y7E3LPQZFD
 # Example of adding a new link to the footer - {icon: "ion-logo-facebook", link: "https://facebook.com"}
 # Other icons can be found at https://ionicons.com/v4/
 social:
-- {icon: "ion-logo-twitter", link: "https://twitter.com"}
-- {icon: "ion-logo-github", link: "https://github.com"}
-- {icon: "ion-logo-pinterest", link: "https://pinterest.com"}
-- {icon: "ion-logo-codepen", link: "https://codepen.io"}
-- {icon: "ion-logo-vimeo", link: "https://vimeo.com"}
-- {icon: "ion-logo-youtube", link: "https://youtube.com"}
+- {icon: "ion-logo-linkedin", link: "https://www.linkedin.com/in/yunseong-jung-49835223b/"}
+- {icon: "ion-logo-github", link: "https://github.com/JungYunseong"}
+- {icon: "ion-logo-pinterest", link: "https://pinterest.co.kr/yunseong02/"}
+- {icon: "ion-logo-instagram", link: "https://www.instagram.com/yuns2_21/"}
+- {icon: "ion-logo-vimeo", link: "https://vimeo.com/user83982182"}
+- {icon: "ion-logo-youtube", link: "https://www.youtube.com/channel/UCVNJ9Hm-ETlAA_d9ApjlvtA"}

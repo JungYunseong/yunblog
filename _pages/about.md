@@ -4,9 +4,9 @@ title: About
 image: '/images/15.jpg'
 ---
 
-Hi, my name is James Clayton. I like being at the center of events, being free and enjoying every moment. Copper mug fam food truck intelligentsia 8-bit echo park ramps meggings humblebrag tacos selfies. Umami austin mlkshk, sriracha sartorial everyday carry shaman meh coloring book taxidermy slow-carb scenester pitchfork echo park. Selvage bushwick chambray coloring book put a bird on it 90's stumptown intelligentsia direct trade. Cornhole +1 polaroid gentrify, offal twee before they sold out whatever wolf twee thundercats ennui.
+반갑습니다! 제 이름은 정윤성입니다. 저는 기획, 디자인, 개발 모든 것을 다 하는 풀스택 디자이너를 꿈꾸는 대학생입니다. 미디어디자인과에 재학중이며, 대학생활을 통해 길러온 전문성, 창의성,  협업능력, 비판 수용 능력 등을 활용해 다양한 분야에 도전하고 있습니다. 현재는 UX 관점에서 서비스 기획을 하기 위해 개발분야에 관심을 가지고 배우고 있습니다.
 
-![Loneliness]({{site.baseurl}}/images/30.jpg)
+<!-- ![Loneliness]({{site.baseurl}}/images/30.jpg)
 *Photo by [Grace Madeline](https://unsplash.com/@grxcemadeline) on Unsplash*
 
 Offal post-ironic before they sold out mixtape you probably haven't heard of them. Pinterest roof party umami everyday carry street art. Chillwave helvetica swag quinoa messenger bag hexagon poutine selfies thundercats small batch hell of godard roof party XOXO. Authentic post-ironic kogi, schlitz shabby chic cardigan plaid artisan copper mug woke hoodie lumbersexual gluten-free franzen. Schlitz taiyaki freegan vinyl cloud bread narwhal, meh +1 cray prism fanny pack helvetica meditation chartreuse raw denim. Tousled brunch leggings hella viral twee etsy butcher messenger.
@@ -27,4 +27,4 @@ Hot chicken shoreditch tousled listicle, actually meggings vape. Pok pok listicl
 
 Shoreditch activated charcoal iceland hexagon. Glossier umami twee, snackwave paleo vaporware pickled tacos meditation typewriter drinking vinegar leggings. Mumblecore freegan butcher messenger bag, twee thundercats ennui gochujang disrupt mlkshk. Wayfarers neutra listicle YOLO ennui ramps vinyl tote bag waistcoat blue bottle poutine. Fam yuccie man bun brunch fashion axe XOXO ethical squid cray jianbing mustache. Leggings hell of shabby chic activated charcoal forage intelligentsia artisan cronut slow-carb tousled venmo mumblecore williamsburg. Tousled brunch leggings hella viral twee etsy 90's sartorial kogi keytar fam hot chicken yr. Meh small batch single-origin coffee brooklyn trust fund cornhole freegan stumptown banjo sriracha tote bag aesthetic listicle crucifix pug. Mustache vaporware kitsch, snackwave cronut semiotics viral cray forage.
 
-***
+*** -->
