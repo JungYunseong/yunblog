@@ -3,6 +3,16 @@
 // *****************
 
 // Spaces
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR&display=swap');
+
+@font-face {
+    font-family: 'yg-jalnan';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_four@1.2/JalnanOTF00.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 $base-spacing-unit: 16px;
 
 // Border radius
@@ -19,12 +29,12 @@ $base-font-size: 19px;
 $base-font-style: normal;
 $base-font-variant: normal;
 $base-font-weight: normal;
-$base-font-family: 'Noto Sans KR', Helvetica Neue, Helvetica, Arial, sans-serif;
+$base-font-family: 'Noto Sans KR', sans-serif;
 $base-line-height: 1.5;
 
 // Headings
-$heading-font-weight: 800;
-$heading-font-family: 'Nunito', Helvetica Neue, Helvetica, Arial, sans-serif;
+$heading-font-weight: 600;
+$heading-font-family: 'yg-jalnan', sans-serif;
 
 $font-size-h1:  36px;
 $font-size-h2:  28px;

@@ -2,12 +2,12 @@
 title: Modern Bathroom
 date: 2018-06-13 02:14:00 +0300
 subtitle: CG Arts
-image: '/images/project/modern bathroom.jpg'
+image: '/images/project/modern bathroom/modern bathroom.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/modern bathroom.jpg" alt="Project">
+    <img src="/images/project/modern bathroom/modern bathroom.jpg" alt="Project">
   </div>
   <em>Modern Bathroom / <a href="/about" target="_blank">Jung Yunseong</a></em>
 </div>

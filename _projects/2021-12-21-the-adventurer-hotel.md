@@ -2,12 +2,12 @@
 title: The Adventurer Hotel
 date: 5-12-21 13:30:00 +0300
 subtitle: CG Arts
-image: '/images/project/hill house_1.jpg'
+image: '/images/project/the adventurer hotel/the adventurer hotel_1.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/hill house_ref.jpg"  width="300" height="300" alt="Project">
+    <img src="/images/project/the adventurer hotel/the adventurer hotel_ref.jpg"  width="300" height="300" alt="Project">
   </div>
   <em><a href="https://www.artstation.com/artwork/L3NGdA" target="_blank">The Adventurer Hotel</a> / John</em>
 </div>
@@ -16,11 +16,11 @@ image: '/images/project/hill house_1.jpg'
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/hill house_1.jpg" alt="Project">
-    <img src="/images/project/hill house_2.jpg" alt="Project">
-    <img src="/images/project/hill house_3.jpg" alt="Project">
+    <img src="/images/project/the adventurer hotel/the adventurer hotel_1.jpg" alt="Project">
+    <img src="/images/project/the adventurer hotel/the adventurer hotel_2.jpg" alt="Project">
+    <img src="/images/project/the adventurer hotel/the adventurer hotel_3.jpg" alt="Project">
   </div>
-  <em>The Adventurer Hotel / <a href="/about" target="_blank">Jung Yunseong</a></em>
+  <em>The Adventurer Hotel / <a href="/about" target="_blank">Jung Yunseong</a>, Ahn Taewoo</em>
 </div>
 
 ***

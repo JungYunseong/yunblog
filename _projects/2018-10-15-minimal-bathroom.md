@@ -2,14 +2,14 @@
 title: Minimal Bathroom
 date: 2018-10-15 15:21:00 +0300
 subtitle: CG Art
-image: '/images/project/minimal bathroom_1.jpg'
+image: '/images/project/minimal bathroom/minimal bathroom_1.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/minimal bathroom_1.jpg" alt="Project">
-    <img src="/images/project/minimal bathroom_2.jpg" alt="Project">
-    <img src="/images/project/minimal bathroom_3.jpg" alt="Project">
+    <img src="/images/project/minimal bathroom/minimal bathroom_1.jpg" alt="Project">
+    <img src="/images/project/minimal bathroom/minimal bathroom_2.jpg" alt="Project">
+    <img src="/images/project/minimal bathroom/minimal bathroom_3.jpg" alt="Project">
   </div>
   <em>Minimal Bathroom / <a href="/about" target="_blank">Jung Yunseong</a></em>
 </div>
@@ -20,7 +20,7 @@ Minimal Bathroom은 Pinterest 사이트에서 다른 아티스트들의  이미�
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/minibath_progress.png" alt="Project">
+    <img src="/images/project/minimal bathroom/minibath_progress.png" alt="Project">
   </div>
   <em>Progress</em>
 </div>

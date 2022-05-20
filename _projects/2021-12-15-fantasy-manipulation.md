@@ -2,12 +2,12 @@
 title: Fantasy Manipulation
 date: 3-12-15 18:45:00 +0300
 subtitle: Concept Art
-image: '/images/project/fantasy manipulation.jpg'
+image: '/images/project/fantasy manipulation/fantasy manipulation.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/fantasy manipulation_sketch.jpg" width="300" height="300" alt="Project">
+    <img src="/images/project/fantasy manipulation/fantasy manipulation_sketch.jpg" width="300" height="300" alt="Project">
   </div>
   <em>Sketch</em>
 </div>
@@ -16,7 +16,7 @@ image: '/images/project/fantasy manipulation.jpg'
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/fantasy manipulation.jpg" alt="Project">
+    <img src="/images/project/fantasy manipulation/fantasy manipulation.jpg" alt="Project">
   </div>
   <em>Fantasy Manipulation / <a href="/about" target="_blank">Jung Yunseong</a></em>
 </div>

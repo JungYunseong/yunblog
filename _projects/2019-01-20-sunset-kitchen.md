@@ -2,12 +2,12 @@
 title: Sunset Kitchen
 date: 2-01-20 11:15:00 +0300
 subtitle: CG Arts
-image: '/images/project/sunset kitchen.jpg'
+image: '/images/project/sunset kitchen/sunset kitchen.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/sunset kitchen.jpg" alt="Project">
+    <img src="/images/project/sunset kitchen/sunset kitchen.jpg" alt="Project">
   </div>
   <em>Sunset Kitchen / <a href="/about" target="_blank">Jung Yunseong</a></em>
 </div>

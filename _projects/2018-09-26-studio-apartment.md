@@ -2,12 +2,12 @@
 title: Studio Apartment
 date: 2018-09-26 02:07:00 +0300
 subtitle: CG Arts
-image: '/images/project/studio apartment_1.jpg'
+image: '/images/project/studio apartment/studio apartment_1.jpg'
 ---
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/studio apartment_ref.jpg" width="300" height="300" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_ref.jpg" width="300" height="300" alt="Project">
   </div>
   <em>floor plan</em>
 </div>
@@ -16,15 +16,15 @@ Modern Bathroom 프로젝트를 진행하면서 겪었던 시행착오, 경험�
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/studio apartment_1.jpg" alt="Project">
-    <img src="/images/project/studio apartment_2.jpg" alt="Project">
-    <img src="/images/project/studio apartment_3.jpg" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_1.jpg" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_2.jpg" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_3.jpg" alt="Project">
   </div>
 </div>
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/studio apartment_4.jpg" alt="Project">
-    <img src="/images/project/studio apartment_5.jpg" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_4.jpg" alt="Project">
+    <img src="/images/project/studio apartment/studio apartment_5.jpg" alt="Project">
   </div>
   <em>Studio Apartment / <a href="/about" target="_blank">Jung Yunseong</a></em>
 </div>
@@ -33,7 +33,7 @@ Modern Bathroom 프로젝트를 진행하면서 겪었던 시행착오, 경험�
 
 <div class="gallery-box">
   <div class="gallery">
-    <img src="/images/project/studio_progress.png" alt="Project">
+    <img src="/images/project/studio apartment/studio_progress.png" alt="Project">
   </div>
   <em>Progress</em>
 </div>
