@@ -98,7 +98,7 @@ ex)
 
 적용가능한 Custom Font 항목들은 아래 공식 문서에 리스트업 되어있다.
 
-[System Fonts](https://developer.apple.com/fonts/system-fonts/#document](https://developer.apple.com/fonts/system-fonts/#document))
+<iframe src="https://developer.apple.com/fonts/system-fonts/#document](https://developer.apple.com/fonts/system-fonts/#document"></iframe>
 
 ### 이외 Text View에 적용할 수 있는 Function
 
