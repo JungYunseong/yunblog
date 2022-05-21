@@ -2,10 +2,11 @@
 layout: post
 title:  Modality
 date:   2022-05-21 21:49:35 +0300
-image:  '/images/post/Modality/modality1.png'
+image:  '/images/post/modality/modality1.png'
 tags:   [SwiftUI, HIG, Development]
 ---
 # Modality
 > Modality is a design technique that presents content in a temporary mode that requires an explicit action to exit.
 >
 > <cite><a href="https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/modality/">HIG</a></cite>
+
