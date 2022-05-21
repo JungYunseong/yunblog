@@ -8,12 +8,12 @@ tags:   [SwiftUI, HIG, Development]
 # Modality
 > Modality is a design technique that presents content in a temporary mode that requires an explicit action to exit.
 >
-> <cite><a href="https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/modality/">HIG</a></cite>
+> <cite><a href="https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/modality/">Human Interface Guideline</a></cite>
 
 HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
 
-<center><img src="/images/post/modality/modality2.PNG" alt="Project"></center>
-메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 Modal View라고 부릅니다.
+<center><img src="/images/post/modality/modality2.PNG" width="300" alt="Project"></center>
+메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 'Modal View라고 부릅니다.
 
 이외에도 HIG에 따르면, IOS에서는 Modality로 alerts, activity views, share sheets, action sheets를 제공하고 있습니다.
 <div class="gallery-box">
@@ -23,6 +23,92 @@ HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까
 	<img src="/images/post/modality/modality_shareSheets.jpg" alt="Project">
 	<img src="/images/post/modality/modality_actionSheets.jpg" alt="Project">
   </div>
-  <em>modality</em>
 </div>
 
+***
+
+## modality를 사용하는 경우
+- 사용자들이 개별의 task에 집중할 수 있게 하려할 때
+- 경고를 주기 위해, 중요한 정보를 전달하기 위해
+
+***
+
+## modality를 사용하는 방법
+#### Sheet
+```swift
+struct modalSheet: View {
+    
+    @State var showView: Bool = false
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                showView.toggle()
+            }) {
+                Text("Some Sheet")
+                    .font(.title)
+                    .foregroundColor(.black)
+            }
+        }
+        .sheet(isPresented: $showView, content: {
+            sheetView()
+        })
+    }
+}
+
+struct sheetView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                },label: {
+                    Text("Done")
+                        .padding(20)
+                })
+            }
+            Spacer()
+        }
+    }
+}
+```
+
+<center><img src="/images/post/modality/sheet.gif" width="500" alt="Project"></center>
+
+#### FullScreenCover
+```swift
+.sheet(isPresented: $showView, content: {
+            sheetView()
+
+.fullScreenCover(isPresented: $showView, content: {
+            sheetView()			
+```
+<center><img src="/images/post/modality/full.gif" width="500" alt="Project"></center>
+
+## modality 방식 종류
+- 기본적으로 제공하는 형식을 사용 (sheet방식)
+- Fullscreen: 이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
+- Popover: 팝오버 방식은 iPad환경에서 사용하고, 화면이 작은 폰의 경우에는 sheet방식을 이용
+- Sheet: 안내를 위해 화면을 부분적으로 덮는 방식 (nonimmersive)
+- Current Context: 현재 문맥에 맞춰서 띄우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우, 하나의 뷰만 바꾸고 싶을 때 유용함
+- Custom: 애니메이션이나 내용을 커스텀하고 싶을 때
+
+## modality를 사용할 때의 주의사항
+1. 사용자들이 집중해야 하는 경우에 사용하며, 현재 문맥과 다른 작업을 진행할 때 사용합니다.
+2. alerts의 경우 핵심적인 것을 전달할 때, 뭔가 문제가 생겼을 때, actionable한 상황에서 이상적입니다. <br/>
+alerts는 사용자 경험에 있어서 방해하는 요소이기 때문에 왠만하면 사용하지 않는 것이 좋습니다. (*.ondelete* 같은 정상적인 사용자 행동의 결과로 진행되는 경우)
+3. 문맥이 간단하고, 짧을때, 또는 짧은 집중을 요구할 때 사용합니다. <br/>
+modal이 복잡하면 이전에 하고 있던 task를 잊어버리게 할 수 있어 좋지 않은 사용자 경험을 가져다 줍니다. modal view가 서브뷰를 꼭 서브뷰가 있어야 한다면, 하나의 hierarchy 경로만 제공해야 합니다. 추가로 "Done"이라는 버튼은 modal view의 전체 task를 종료하는 것 이외는 사용하지 않는 것이 좋습니다.(choose 등을 사용)
+4. modal view는 언제든지 종료할 수 있게 만드는 것이 좋습니다.
+5. modal의 문맥이 복잡하거나 몰입형일 때는 Fullscreen 모드를 고려해보세요.
+6. "Done", "Cancel"과 같은 나가기 버튼은 항상 있어야 합니다.
+7. 사용자가 modal을 닫으려고 할때 사용자가 작성한 내용이 있을경우 확인을 받아 사용자가 데이터를 잃지 않게 도와주세요.
+8. Popover위에는 alerts를 제외하고 어떤 것도 올라가면 안됩니다. 필요한 경우 새로운 modal을 띄우기 위해 popover를 닫아야 합니다.
+9. 모달에 제목을 제공하거나 추가적인 설명글을 제공하여 사용자들이 modal view의 task가 무엇인지 알기 쉽게 만들어야 합니다.
+10. modal view에 navigation bar를 사용할 경우 앱의 기본 디자인과 같은 디자인을 사용해야 합니다.
+11. modal을 띄우는 애니메이션이 여러가지 방식이 있는데 그 상황에 적절한 방식을 사용해야 합니다.
