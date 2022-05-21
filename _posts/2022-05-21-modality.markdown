@@ -10,3 +10,19 @@ tags:   [SwiftUI, HIG, Development]
 >
 > <cite><a href="https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/modality/">HIG</a></cite>
 
+HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
+
+<center><img src="/images/post/modality/modality2.PNG" alt="Project"></center>
+메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 Modal View라고 부릅니다.
+
+이외에도 HIG에 따르면, IOS에서는 Modality로 alerts, activity views, share sheets, action sheets를 제공하고 있습니다.
+<div class="gallery-box">
+  <div class="gallery4">
+    <img src="/images/post/modality/modality_alerts.jpg" alt="Project">
+	<img src="/images/post/modality/modality_activitySheets.jpg" alt="Project">
+	<img src="/images/post/modality/modality_shareSheets.jpg" alt="Project">
+	<img src="/images/post/modality/modality_actionSheets.jpg" alt="Project">
+  </div>
+  <em>modality</em>
+</div>
+
