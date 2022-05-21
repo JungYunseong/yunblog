@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Modality
-date:   2022-05-21 21:45:35 +0300
+date:   2022-05-21 15:01:35 +0300
 image:  '/images/post/modality/modality1.png'
 tags:   [SwiftUI, HIG, Development]
 ---
