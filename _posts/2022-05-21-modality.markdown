@@ -13,7 +13,7 @@ tags:   [SwiftUI, HIG, Development]
 HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
 
 <center><img src="/images/post/modality/modality2.PNG" width="300" alt="Project"></center>
-메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 'Modal View라고 부릅니다.
+메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 'Modal View'라고 부릅니다.
 
 이외에도 HIG에 따르면, IOS에서는 Modality로 alerts, activity views, share sheets, action sheets를 제공하고 있습니다.
 <div class="gallery-box">
@@ -78,18 +78,19 @@ struct sheetView: View {
 }
 ```
 
-<center><img src="/images/post/modality/sheet.gif" width="500" alt="Project"></center>
+<center><img src="/images/post/modality/sheet.gif" width="300" alt="Project"></center>
 
 #### FullScreenCover
 ```swift
 .sheet(isPresented: $showView, content: {
             sheetView()
-
+// 를 아래로 변경
 .fullScreenCover(isPresented: $showView, content: {
             sheetView()			
 ```
-<center><img src="/images/post/modality/full.gif" width="500" alt="Project"></center>
+<center><img src="/images/post/modality/full.gif" width="300" alt="Project"></center>
 
+<br/>
 ## modality 방식 종류
 - 기본적으로 제공하는 형식을 사용 (sheet방식)
 - Fullscreen: 이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
@@ -98,6 +99,7 @@ struct sheetView: View {
 - Current Context: 현재 문맥에 맞춰서 띄우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우, 하나의 뷰만 바꾸고 싶을 때 유용함
 - Custom: 애니메이션이나 내용을 커스텀하고 싶을 때
 
+<br/>
 ## modality를 사용할 때의 주의사항
 1. 사용자들이 집중해야 하는 경우에 사용하며, 현재 문맥과 다른 작업을 진행할 때 사용합니다.
 2. alerts의 경우 핵심적인 것을 전달할 때, 뭔가 문제가 생겼을 때, actionable한 상황에서 이상적입니다. <br/>
