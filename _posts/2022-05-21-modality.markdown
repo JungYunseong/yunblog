@@ -84,7 +84,9 @@ struct sheetView: View {
 ```swift
 .sheet(isPresented: $showView, content: {
             sheetView()
-// 를 아래로 변경
+
+// 부분을 아래와 같이 변경
+
 .fullScreenCover(isPresented: $showView, content: {
             sheetView()			
 ```
