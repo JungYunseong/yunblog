@@ -2,7 +2,7 @@
 layout: post
 title:  조건문
 date:   2022-05-15 00:00:00 +0300
-image:  '/images/post/text/text1.jpg'
+image:  '/images/post/Conditional Statement/conditionalStatement1.jpg'
 tags:   [SwiftUI, Development]
 ---
 # Swift에서 조건문을 표현하는 방법

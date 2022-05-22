@@ -1,21 +1,36 @@
 ---
 layout: post
 title:  Modality
-date:   2022-05-21 00:00:00 +0300
+date:   2022-05-22 00:00:00 +0300
 image:  '/images/post/modality/modality1.png'
 tags:   [SwiftUI, HIG, Development]
 ---
-# Modality
+## Modality가 뭐지?
+
 > Modality is a design technique that presents content in a temporary mode that requires an explicit action to exit.
 >
-> <cite><a href="https://developer.apple.com/design/human-interface-guidelines/ios/app-architecture/modality/">Human Interface Guideline</a></cite>
+> <cite><a href="https://papago.naver.net/website?locale=ko&source=en&target=ko&url=https%3A%2F%2Fdeveloper.apple.com%2Fdesign%2Fhuman-interface-guidelines%2Fios%2Fapp-architecture%2Fmodality%2F" target="_blank">Human Interface Guideline</a></cite>
+
 
 HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
 
-<center><img src="/images/post/modality/modality2.PNG" width="300" alt="Project"></center>
-메일 앱에서 '메일 작성'버튼을 눌렀을 때, 밑에서 새로운 창이 하나 올라오게 됩니다. 이걸 'Modal View'라고 부릅니다.
+Modality의 종류중 하나인 modal view를 예로,<br/>
+만약 사용자가 메일을 사용한다고 가정해보면 사용자는 메일함을 확인하다가 메일을 작성할 일이 생겼을때 '메일 작성'버튼을 누르게 됩니다. 그러면 밑에서 새로운 창(메일 작성 창)이 하나 올라오게 됩니다.
+<center><img src="/images/post/modality/mail.gif" width="300" alt="Project"></center> <br/>
 
-이외에도 HIG에 따르면, IOS에서는 Modality로 alerts, activity views, share sheets, action sheets를 제공하고 있습니다.
+이렇게 본 문맥과 별개로 새로운 view를 띄우는 방식입니다.
+
+***
+
+## Modality를 사용하는 경우
+- 사용자들이 개별의 task에 집중할 수 있게 하려할 때
+- 중요한 정보를 전달하거나 경고를 주기 위해
+
+***
+
+## Modality의 종류와 Present방식
+
+HIG에 따르면, IOS에서는 Modality로 <a href="/blog/alerts"><b>alerts</b></a>, <a href="/blog/activity-views"><b>activity views</b></a>, <a href="/blog/share-sheets"><b>share sheets</b></a>, <a href="/blog/action-sheets"><b>action sheets</b></a>를 제공하고 있습니다.
 <div class="gallery-box">
   <div class="gallery4">
     <img src="/images/post/modality/modality_alerts.jpg" alt="Project">
@@ -24,25 +39,11 @@ HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까
 	<img src="/images/post/modality/modality_actionSheets.jpg" alt="Project">
   </div>
 </div>
-
-***
-
-## modality를 사용하는 경우
-- 사용자들이 개별의 task에 집중할 수 있게 하려할 때
-- 경고를 주기 위해, 중요한 정보를 전달하기 위해
-
-***
-
-## modality 방식 종류
-- 기본적으로 제공하는 형식을 사용 (sheet방식)
-- Fullscreen: 이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
-- Popover: 팝오버 방식은 iPad환경에서 사용하고, 화면이 작은 폰의 경우에는 sheet방식을 이용
-- Sheet: 안내를 위해 화면을 부분적으로 덮는 방식 (nonimmersive)
-- Current Context: 현재 문맥에 맞춰서 띄우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우, 하나의 뷰만 바꾸고 싶을 때 유용함
-- Custom: 애니메이션이나 내용을 커스텀하고 싶을 때
 <br/>
 
 ### Sheet
+안내를 위해 화면을 부분적으로 덮는 방식 (nonimmersive)
+
 ```swift
 struct modalSheet: View {
     
@@ -85,9 +86,26 @@ struct sheetView: View {
     }
 }
 ```
-
-<center><img src="/images/post/modality/sheet.gif" width="300" alt="Project"></center>
+<center><img src="/images/post/modality/sheet.gif" width="300" height="500" alt="Project"></center>
 <br/>
+
+### Fullscreen
+이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
+
+- Popover: 팝오버 방식은 iPad환경에서 사용하고, 화면이 작은 폰의 경우에는 sheet방식을 이용
+- Current Context: 현재 문맥에 맞춰서 띄우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우, 하나의 뷰만 바꾸고 싶을 때 유용함
+- Custom: 애니메이션이나 내용을 커스텀하고 싶을 때
+
+<div class="gallery-box">
+  <div class="gallery4">
+    <img src="/images/post/modality/full.gif" alt="Project">
+    	<img src="/images/post/modality/popover.png" alt="Project">
+	<img src="/images/post/modality/sheet.gif" alt="Project">
+	<img src="/images/post/modality/full.gif" alt="Project">
+  </div>
+</div>
+<br/>
+
 
 ### FullScreenCover
 ```swift
@@ -99,12 +117,12 @@ struct sheetView: View {
 .fullScreenCover(isPresented: $showView, content: {
             sheetView()			
 ```
-<center><img src="/images/post/modality/full.gif" width="300" alt="Project"></center>
 <br/>
 
 ### Custom sheet animation
 #### Animation
 <a href="/blog/conditional-statement/#TO"><b>삼항연산자</b></a>를 사용해서 구현할 수 있습니다.
+
 
 
 ***

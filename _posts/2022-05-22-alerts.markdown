@@ -1,0 +1,23 @@
+---
+layout: post
+title:  Alerts
+date:   2022-05-22 00:00:00 +0300
+image:  '/images/post/alerts/Alerts.png'
+tags:   [SwiftUI, HIG, Development]
+---
+> Alerts convey important information related to the state of your app or the device.
+>
+> <cite><a href="https://papago.naver.net/website?locale=ko&source=en&target=ko&url=https%3A%2F%2Fdeveloper.apple.com%2Fdesign%2Fhuman-interface-guidelines%2Fios%2Fviews%2Falerts%2F" target="_blank">Human Interface Guideline</a></cite>
+
+앱이나 디바이스의 상태와 관련된 정보를 전달합니다.
+
+<center><img src="/images/post/alerts/Alerts.png" width="300" alt="Project"></center> <br/>
+
+제목, 메시지(optional), 하나 이상의 버튼 및 텍스트 필드(optional)로 구성됩니다. 이외, <span style="color: red">경고창을 커스텀 할 수 없습니다.</span>
+## Guideline
+- <b>alerts는 최소한으로 사용해야합니다.</b> <br/>
+alerts는 UX를 방해하는 요소이기 때문에 자주 사용하지 않고 중요한 정보를 전달할 때만 사용하는 것이 좋습니다.
+- <b>alerts보단 action sheets를 사용하여 의도된 action을 제공해야 합니다.</b> <br/>
+예를 들어, 메일의 경우에 사용자가 작성중인 페이지를 벗어나려고 할 때, '저장', '삭제', '편집' 등의 선택사항을 제공하고 있습니다. 이렇게 action sheets는 해당 action에 관한 선택결과로 여러 선택사항을 제공하지만, alerts의 경우에는 '확인' 또는 '취소' 외에 추가적인 선택사항을 제공하지 않습니다.
+- <b>가능하면 경고창은 스크롤 되지 않도록 해야 합니다.</b> <br/>
+텍스트의 크기가 클 경우에는 경고창이 스크롤되는 상황이 생깁니다. 필요한 경우에만 경고 제목을 짧게 하고 간단한 메시지를 포함해서 스크롤 될 가능성을 최소화 하는게 좋습니다.
