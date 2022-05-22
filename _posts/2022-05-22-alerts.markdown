@@ -14,10 +14,107 @@ tags:   [SwiftUI, HIG, Development]
 <center><img src="/images/post/alerts/Alerts.png" width="300" alt="Project"></center> <br/>
 
 제목, 메시지(optional), 하나 이상의 버튼 및 텍스트 필드(optional)로 구성됩니다. 이외, <span style="color: red">경고창을 커스텀 할 수 없습니다.</span>
+
+***
+
+## SwiftUI로 구현하는 방법
+<b style="color: #F52FA5">primaryButton: .destructive, secondaryButton: .cancel</b> 로 경고 메세지에 두가지 버튼을 추가 할 수 있습니다.
+
+```swift
+struct modalAlerts: View {
+    
+    @State private var showAlert = false
+    
+    var body: some View {
+        ZStack {
+            Color.brown
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Button(action: {
+                    showAlert.toggle()
+                }) {
+                    Text("Alert")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            .alert(isPresented: $showAlert) {
+                Alert(title: Text("제목"), message: nil,
+                      primaryButton: .destructive(Text("Delete"), action: {}),
+                      secondaryButton: .cancel(Text("Cancel"))
+                )
+            }
+        }
+    }
+}
+
+```
+<br/>
+<center><img src="/images/post/alerts/alert1.gif" width="300" alt="Project"></center> <br/>
+
+위와 같이, body에 Alert를 직접 만들어 사용할 수 있지만 여러개의 매개변수로 인해 코드로 인해 지져분해 보입니다. <br/>
+이때 <a href="/blog/function"><b>함수</b></a>를 사용하여 코드를 정리할 수 있습니다.
+
+```swift
+struct modalAlerts2: View {
+    
+    @State private var showAlert = false
+    
+    var body: some View {
+        ZStack {
+            Color.brown
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Button(action: {
+                    showAlert.toggle()
+                }) {
+                    Text("Alert")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            .alert(isPresented: $showAlert, content: myAlert)
+        }
+    }
+}
+
+func myAlert() -> Alert {
+    let Button1 = Alert.Button.destructive(Text("Delete"), action: {})
+    let Button2 = Alert.Button.cancel(Text("Cancel"))
+    
+    return Alert(title: Text("제목"),
+                 message: Text("메시지."),
+                 primaryButton: Button1, secondaryButton: Button2
+    )
+}
+```
+<br/>
+<center><img src="/images/post/alerts/alert2.gif" width="300" alt="Project"></center> <br/>
+
+***
+
 ## Guideline
 - <b>alerts는 최소한으로 사용해야합니다.</b> <br/>
 alerts는 UX를 방해하는 요소이기 때문에 자주 사용하지 않고 중요한 정보를 전달할 때만 사용하는 것이 좋습니다.
 - <b>alerts보단 action sheets를 사용하여 의도된 action을 제공해야 합니다.</b> <br/>
 예를 들어, 메일의 경우에 사용자가 작성중인 페이지를 벗어나려고 할 때, '저장', '삭제', '편집' 등의 선택사항을 제공하고 있습니다. 이렇게 action sheets는 해당 action에 관한 선택결과로 여러 선택사항을 제공하지만, alerts의 경우에는 '확인' 또는 '취소' 외에 추가적인 선택사항을 제공하지 않습니다.
 - <b>가능하면 경고창은 스크롤 되지 않도록 해야 합니다.</b> <br/>
-텍스트의 크기가 클 경우에는 경고창이 스크롤되는 상황이 생깁니다. 필요한 경우에만 경고 제목을 짧게 하고 간단한 메시지를 포함해서 스크롤 될 가능성을 최소화 하는게 좋습니다.
+텍스트의 크기가 클 경우에는 경고창이 스크롤되는 상황이 생깁니다. 필요한 경우에만 경고 제목을 짧게 하고 간단한 메시지를 포함해서 스크롤될 가능성을 최소화 하는게 좋습니다.
+- <b>짧은 설명의 다중 단어로 이루어진 제목을 사용해야 합니다.</b> <br/>
+가능한한 짧은 텍스트가 좋겠지만, 일반적으로 한단어로 충분한 정보를 제공하기 힘듭니다. 다중 단어로 가능한 한 추가 메시지가 필요없는 제목을 만드는 것이 좋습니다. 다중 단어로 이루어진 제목일 경우, 제목 유형 대문자를 사용하고 끝 문장 부호를 추가하면 안됩니다. 만약, 제목이 완전한 문장을 이루고 있을때는 문장 유형 대문자를 사용하고 끝 문장 부호를 사용합니다.
+- <b>메시지를 사용해야 하는 경우라면, 짧고 완전한 문장을 써야합니다.</b> <br/>
+스크롤될 가능성을 줄이기 위해 한 두줄 정도의 짧은 메시지를 만들되, 다중 단어가 아닌 문장을 이루고 있어야하며 문장유형의 대문자를 사용하고 끝 문장 부호를 사용해야합니다.
+- <b>직접적이고, 중립적인 표현을 해야합니다.</b> <br/>
+alerts는 문제와 심각한 상황을 나타내야해서 간접적이거나 문제의 심각성을 숨기는 내용은 피하는 것이 좋습니다.
+- <b>경고 버튼에 대해 설명하면 안됩니다.</b> <br/>
+경고문구와 버튼이름이 명확할 경우 버튼의 기능에 대해 설명할 필요가 없습니다. 상호작용 방법을 설명하는 문구(choose)를 사용하고 되도록이면 정확한 버튼 이름을 설정해야합니다.
+- <b>간단하고 논리적인 버튼 제목을 만들어야 합니다.</b> <br/>
+버튼 선택 결과를 설명하는 하나 또는 두개로 이루어진 단어로 만드는 것이 이상적입니다. 경고 내용과 직접적으로 관련된 단어(예: 회신, 무시 등)를 사용해야 합니다. 수락을 위한 문구로는 <del>'Yes','No'</del> 대신 'Ok'를 사용해야합니다. 알림의 작업을 취소하는 버튼의 이름으로는 항상 'Cancel'이라는 단어를 사용해야 합니다. 버튼이름도 alerts 제목과 마찬가지로 제목 유형의 대문자를 사용하고 끝 구두점을 사용하면 안됩니다.
+- <b>사람들이 기대하는 곳에 버튼을 위치 해야합니다.</b> <br/>
+일반적으로 2개의 버튼을 가진 alerts에서 사용자들이 누를 가능성이 가장 높은 버튼을 오른쪽에, 취소버튼을 왼쪽에 배치해야 합니다. 세개 이상의 버튼을 포함하는 경우 스택으로 표시되며, 가장 높은 버튼은 상단에, 취소버튼을 하단에 표시해야합니다.
+- <b>파괴적인 버튼은 구별해야합니다.</b> <br/>
+내용 삭제와 같은 파괴적인 action을 유발하는 경우 눈에 띄는 스타일을 적용해야합니다. 여기서는 항상 취소버튼은 포함시켜 사용자들이 action을 되돌릴 수 있게 만들어야 합니다.
+- <b>앱을 종료하면 alerts를 취소할 수 있게 해야 합니다.</b> <br/>
+홈화면으로 나가면 alerts를 취소할 수 있게 해야하며 키보드의 esc, cmd+. 을 사용했을때도 경고가 취소 되게 하는것이 좋습니다.
