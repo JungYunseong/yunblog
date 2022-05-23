@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Activity views, Share sheets
-date:   2022-05-22 00:00:00 +0300
+date:   2022-05-22 12:00:00 +0300
 image:  '/images/post/activity view/activityView.jpg'
 tags:   [SwiftUI, UIKit, HIG, Development]
 ---
