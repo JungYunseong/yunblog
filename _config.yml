@@ -60,3 +60,13 @@ tag_permalink_style:  /:title
 sass:
   sass_dir: _sass
   style: compressed
+
+# Search
+tipue_search:
+  include:
+    pages: false
+    collections: []
+  exclude:
+    files: []
+    categories: []
+    tags: []

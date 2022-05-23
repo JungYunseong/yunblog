@@ -1,0 +1,42 @@
+---
+title: Search
+description: "Search this site"
+layout: page
+permalink: /search/
+tipue_search_active: true
+exclude_from_search: true
+---
+ <form action="{{ page.url | relative_url }}">
+   <div class="tipue_search_left"><img src="{{ "/assets/tipuesearch/search.png" | relative_url }}" class="tipue_search_icon"></div>
+   <div class="tipue_search_right"><input type="text" name="q" id="tipue_search_input" pattern=".{1,}" title="At least 1 characters" required></div>
+   <div style="clear: both;"></div>
+ </form>
+
+<div id="tipue_search_content"></div>
+
+<section class="section blog">
+   <div class="section__info">
+     <div class="section__head">
+      <h2 class="section__title">{{ site.data.settings.blog__settings.blog__title }}</h2>
+       <a class="section__link" href="{{ '/blog' | relative_url }}">View all <i class="ion ion-md-arrow-forward"></i></a>
+     </div>
+    {% if site.data.settings.blog__settings.blog__description %}
+      <p class="section__description">{{ site.data.settings.blog__settings.blog__description }}</p>
+    {% endif %}    </div>
+  
+     <div class="row">
+       {% if site.posts.size > 0 %}
+         {% for post in site.posts offset:0 limit:3 %}
+           {% include article-content.html %}
+         {% endfor %}
+      {% endif %}
+  </div>
+</section>
+
+<script>
+$(document).ready(function() {
+  $('#tipue_search_input').tipuesearch();
+});
+</script>
+
+
