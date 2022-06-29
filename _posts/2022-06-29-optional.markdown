@@ -1,0 +1,249 @@
+---
+layout: post
+title:  Modality
+date:   2022-05-23 08:00:00 +0300
+image:  '/images/post/modality/modality1.png'
+tags:   [SwiftUI, HIG, Development]
+---
+## Modality?
+
+> Modality is a design technique that presents content in a temporary mode that requires an explicit action to exit.
+>
+> <cite><a href="https://papago.naver.net/website?locale=ko&source=en&target=ko&url=https%3A%2F%2Fdeveloper.apple.com%2Fdesign%2Fhuman-interface-guidelines%2Fios%2Fapp-architecture%2Fmodality%2F" target="_blank">Human Interface Guideline</a></cite>
+
+
+HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
+
+Modality의 종류중 하나인 modal view를 예로,<br/>
+만약 사용자가 메일을 사용한다고 가정해보면 사용자는 메일함을 확인하다가 메일을 작성할 일이 생겼을때 '메일 작성'버튼을 누르게 됩니다. 그러면 밑에서 새로운 창(메일 작성 창)이 하나 올라오게 됩니다.
+<center><img src="/images/post/modality/mail.gif" width="300" alt="Project"></center> <br/>
+
+이렇게 본 문맥과 별개로 새로운 view를 띄우는 방식입니다.
+
+***
+
+## Modality를 사용하는 경우
+- 사용자들이 개별의 task에 집중할 수 있게 하려할 때
+- 중요한 정보를 전달하거나 경고를 주기 위해
+
+***
+
+## Modality의 종류와 Present방식
+
+HIG에 따르면, IOS에서는 Modality로 <a href="/blog/alerts"><b>alerts</b></a>, <a href="/blog/activity-views"><b>activity views</b></a>, <a href="/blog/activity-views"><b>share sheets</b></a>, <a href="/blog/action-sheets"><b>action sheets</b></a>를 제공하고 있습니다.
+<div class="gallery-box">
+  <div class="gallery4">
+    <img src="/images/post/modality/modality_alerts.jpg" alt="Project">
+	<img src="/images/post/modality/modality_activitySheets.jpg" alt="Project">
+	<img src="/images/post/modality/modality_shareSheets.jpg" alt="Project">
+	<img src="/images/post/modality/modality_actionSheets.jpg" alt="Project">
+  </div>
+</div>
+<br/>
+
+### Sheet
+안내를 위해 화면을 부분적으로 덮는 방식 (nonimmersive)
+
+```swift
+struct modalSheet: View {
+    
+    @State var showView: Bool = false
+    
+    var body: some View {
+        VStack {
+            Button(action: {
+                showView.toggle()
+            }) {
+                Text("Some Sheet")
+                    .font(.title)
+                    .foregroundColor(.black)
+            }
+        }
+        .sheet(isPresented: $showView, content: {
+            sheetView()
+        })
+    }
+}
+
+struct sheetView: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                },label: {
+                    Text("Done")
+                        .padding(20)
+                })
+            }
+            Spacer()
+        }
+    }
+}
+```
+<br/>
+<center><img src="/images/post/modality/sheet.gif" width="300" alt="Project"></center>
+<br/>
+
+### Fullscreen
+이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
+
+```swift
+.sheet(isPresented: $showView, content: {
+            sheetView()
+
+// 부분을 아래와 같이 변경
+
+.fullScreenCover(isPresented: $showView, content: {
+            sheetView()			
+```
+<br/>
+
+### Popover
+팝오버 방식은 iPad환경에서 사용하고, 화면이 작은 iPhone의 경우에는 sheet방식을 사용합니다.
+
+```swift
+struct modalPopover: View {
+    
+    @State var showView: Bool = false
+    
+    var body: some View {
+        ZStack {
+            Color.brown
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Button(action: {
+                    showView.toggle()
+                }) {
+                    Text("popover")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            .popover(isPresented: $showView, content: {
+                sheetView3()
+            })
+        }
+    }
+}
+
+struct sheetView3: View {
+    
+    @Environment(\.presentationMode) var presentationMode
+    
+    var body: some View {
+        VStack {
+            HStack {
+                Spacer()
+                
+                Button(action: {
+                    presentationMode.wrappedValue.dismiss()
+                },label: {
+                    Text("Done")
+                        .padding(20)
+                })
+            }
+            
+            Spacer()
+        }
+        .frame(width: 500, height: 500)
+    }
+}
+```
+<br/>
+<center><img src="/images/post/modality/popover1.gif" width="500" alt="Project"></center>
+<br/>
+
+### Current Context
+현재 문맥에 맞춰서 뜨우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우(splitView 같은 경우), 하나의 뷰만 바꾸고 싶을 때 유용합니다.
+<center><img src="/images/post/modality/currentContext.png" alt="Project"></center>
+<br/>
+
+### Custom sheet animation
+#### Animation
+<a href="/blog/conditional-statement/#TO"><b>삼항연산자</b></a>를 사용해서 구현할 수 있습니다.
+
+```swift
+struct modalSheetAnimation: View {
+    
+    @State var showView: Bool = false
+    
+    var body: some View {
+        ZStack {
+            Color.brown
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Button(action: {
+                    showView.toggle()
+                }) {
+                    Text("Sheet")
+                        .font(.title)
+                        .foregroundColor(.white)
+                }
+            }
+            
+            sheetViewA1(showView: $showView)
+                            .padding(.top, 100)
+                            .offset(y: showView ? 0 : UIScreen.main.bounds.height)
+                            .animation(.spring(), value: showView)
+        }
+    }
+}
+
+struct sheetViewA1: View {
+    
+    @Binding var showView: Bool
+    
+    var body: some View {
+        ZStack {
+            Color.white
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                HStack {
+                    Spacer()
+                    
+                    Button(action: {
+                        showView.toggle()
+                    },label: {
+                        Text("Done")
+                            .padding()
+                    })
+                }
+                
+                Spacer()
+            }
+        }
+    }
+}
+```
+<br/>
+
+#### Transition
+이외 transition을 사용하여 다양한 animation을 사용할 수 있습니다.
+
+***
+
+## modality를 사용할 때의 주의사항
+1. <b>사용자들이 집중해야 하는 경우에 사용하며, 현재 문맥과 다른 작업을 진행할 때 사용합니다.</b>
+2. <b>alerts와 같이 핵심적인 것을 전달할 때, 뭔가 문제가 생겼을 때, actionable한 상황에서 이상적입니다.</b> <br/>
+alerts는 사용자 경험에 있어서 방해하는 요소이기 때문에 왠만하면 사용하지 않는 것이 좋습니다. (*.ondelete* 같은 정상적인 사용자 행동의 결과로 진행되는 경우)
+3. <b>문맥이 간단하고, 짧을때, 또는 짧은 집중을 요구할 때 사용합니다.</b> <br/>
+modal이 복잡하면 이전에 하고 있던 task를 잊어버리게 할 수 있어 좋지 않은 사용자 경험을 가져다 줍니다. modal view가 서브뷰를 꼭 서브뷰가 있어야 한다면, 하나의 hierarchy 경로만 제공해야 합니다. 추가로 "Done"이라는 버튼은 modal view의 전체 task를 종료하는 것 이외는 사용하지 않는 것이 좋습니다.(choose 등을 사용)
+4. <b>modal view는 언제든지 종료할 수 있게 만드는 것이 좋습니다.</b>
+5. <b>modal의 문맥이 복잡하거나 몰입형일 때는 Fullscreen 모드를 고려해보세요.</b>
+6. <b>"Done", "Cancel"과 같은 나가기 버튼은 항상 있어야 합니다.</b>
+7. <b>사용자가 modal을 닫으려고 할때 사용자가 작성한 내용이 있을경우 확인을 받아 사용자가 데이터를 잃지 않게 도와주세요.</b>
+8. <b>Popover위에는 alerts를 제외하고 어떤 것도 올라가면 안됩니다. 필요한 경우 새로운 modal을 띄우기 위해 popover를 닫아야 합니다.</b>
+9. <b>모달에 제목을 제공하거나 추가적인 설명글을 제공하여 사용자들이 modal view의 task가 무엇인지 알기 쉽게 만들어야 합니다.</b>
+10. <b>modal view에 navigation bar를 사용할 경우 앱의 기본 디자인과 같은 디자인을 사용해야 합니다.</b>
+11. <b>modal을 띄우는 애니메이션이 여러가지 방식이 있는데 그 상황에 적절한 방식을 사용해야 합니다.</b>
+
+***
