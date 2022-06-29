@@ -1,249 +1,199 @@
 ---
 layout: post
-title:  Modality
-date:   2022-05-23 08:00:00 +0300
-image:  '/images/post/modality/modality1.png'
+title:  Optional
+date:   2022-06-29 08:00:00 +0300
+image:  '/images/post/optional/optional.png'
 tags:   [SwiftUI, HIG, Development]
 ---
-## Modality?
+## Optional 옵셔널 - Unwrapping
+지금까지 코드에서 <b style="color: Deeppink">?</b>이나 <b style="color: Deeppink">!</b>기호를 본적 있을건데 이런 기호들이 옵셔널 기호입니다.
 
-> Modality is a design technique that presents content in a temporary mode that requires an explicit action to exit.
->
-> <cite><a href="https://papago.naver.net/website?locale=ko&source=en&target=ko&url=https%3A%2F%2Fdeveloper.apple.com%2Fdesign%2Fhuman-interface-guidelines%2Fios%2Fapp-architecture%2Fmodality%2F" target="_blank">Human Interface Guideline</a></cite>
+> Optional: "선택적인" - 있어도 되고 없어도 되는 존재
 
+Swift에서도 마찬가지로 옵셔널 값이 있을 수도, 없을 수도 있습니다.</br>
+변수(var)나 상수(let)이 nil값일 수 있다는 뜻.
 
-HIG에서는 Modality를 이렇게 정의하고 있는데 이게 무슨말일까...?
+***
+### 옵셔널을 왜 사용할까?
+바로 예시를 보면
+```swift
+var number: Int
+number = nil //nil cannot be assigned to type 'Int'
+```
+이렇게 nil값은 Int형 타입에 할당될 수 없다고 컴파일 에러가 납니다.
 
-Modality의 종류중 하나인 modal view를 예로,<br/>
-만약 사용자가 메일을 사용한다고 가정해보면 사용자는 메일함을 확인하다가 메일을 작성할 일이 생겼을때 '메일 작성'버튼을 누르게 됩니다. 그러면 밑에서 새로운 창(메일 작성 창)이 하나 올라오게 됩니다.
-<center><img src="/images/post/modality/mail.gif" width="300" alt="Project"></center> <br/>
+Swift는 기본적으로 변수를 선언할 때 non-optional, 즉 어떠한 '값'을 변수에 지정해 주어야 합니다.
 
-이렇게 본 문맥과 별개로 새로운 view를 띄우는 방식입니다.
+위의 예시에서는 'number'라는 변수를 Int형으로 선언하여 무조건 정수 타입의 값이 들어가야 합니다. 하지만 <b style="color: DeepPink">nil</b>값이 들어갔습니다. 정수 타입이 아니여서 컴파일 에러가 나게 된거죠.
+
+하지만 코딩을 하다보면 어떠한 변수에 값이 안 들어갈 수도 있습니다. 이때 옵셔널을 사용합니다. 위의 예시처럼 이렇게 변수 안에 값이 확실히 있다는 것을 보장할 수 없으면 Optional을 사용합니다.
+
+Optional을 사용하기 위해서
+```swift
+var number: Int?
+number = nil
+```
+위와 같이 <b style="color: DeepPink">?</b> 기호를 사용합니다. <b style="color: DeepPink">!</b> 도 마찬가지로 옵셔널 기호를 사용함으로써 이변수 안에 값이 있을 수도, 없을 수도 있다는 것을 표현을 하여 컴파일 에러가 나지 않습니다.
 
 ***
 
-## Modality를 사용하는 경우
-- 사용자들이 개별의 task에 집중할 수 있게 하려할 때
-- 중요한 정보를 전달하거나 경고를 주기 위해
+옵셔널이라는 타입의 정의로 이동해서 보면
+```swift
+@frozen public enum Optional<Wrapped> : ExpressibleByNilLiteral {
+    case none
+    case some(Wrapped)
+}
+.
+.
+.
+```
+이런 식으로 선언이 되어있는데, 여기서 우리는 옵셔널이 열거형이라는 것을 알 수 있습니다.
+<b style="color: DeepPink">none</b>: nil값이 없다.</br>
+<b style="color: DeepPink">some</b>(Wrapped): 값이 있다.</br>
+또, 옵셔널이 열거형이기 때문에 switch구문을 이용해서 값이 있고 없음을 확인할 수 있습니다.
+
+```swift	
+func isOptional(value OptionalValue: Any?) {
+    switch OptionalValue {
+    case .none:
+        print("이 옵셔널은 값이 없습니다.")
+    case .some(let someValue):
+        print("이 옵셔널의 값은 \(someValue) 입니다.")
+    }
+}
+
+var name: String? = "Neis"
+isOptional(value: name) // 이 옵셔널의 값은 Neis 입니다.
+
+name = nil
+isOptional(value: name) // 이 옵셔널은 값이 없습니다.
+```
+
+만약 여러 케이스의 조건을 통해 검사하고 싶으면 <b style="color: DeepPink">Where</b>을 사용하면 됩니다
+
+```swift	
+let numbers: [Int?] = [nil, 100, -10, nil, 6, 20]
+
+for item in numbers {
+    switch item {
+    case .some(let someValue) where someValue > 50:
+        print("큰 값: \(someValue)")
+    case .some(let someValue) where someValue < 0:
+        print("음수: \(someValue)")
+    case .some(let someValue):
+        print("양수: \(someValue)")
+    case .none:
+        print("값이 없습니다")
+    }
+}
+```
+
+그런데 고작 하나의 옵셔널을 가지고 이렇게 복잡하게 확인하는 방법은 비효율적입니다.
 
 ***
 
-## Modality의 종류와 Present방식
+### 옵셔널 추출
+일단 상자 하나를 떠올려 보면, 그동안 선언해 온 변수가 왼쪽의 경우라고 생각하면 되고, Optional 변수는 오른쪽 상자안에 값이 들어가 있다고 생각해 봅시다.
 
-HIG에 따르면, IOS에서는 Modality로 <a href="/blog/alerts"><b>alerts</b></a>, <a href="/blog/activity-views"><b>activity views</b></a>, <a href="/blog/activity-views"><b>share sheets</b></a>, <a href="/blog/action-sheets"><b>action sheets</b></a>를 제공하고 있습니다.
-<div class="gallery-box">
-  <div class="gallery4">
-    <img src="/images/post/modality/modality_alerts.jpg" alt="Project">
-	<img src="/images/post/modality/modality_activitySheets.jpg" alt="Project">
-	<img src="/images/post/modality/modality_shareSheets.jpg" alt="Project">
-	<img src="/images/post/modality/modality_actionSheets.jpg" alt="Project">
-  </div>
-</div>
-<br/>
+<center><img src="/images/post/optional/optional1.PNG" alt="Project"></center> <br/>
 
-### Sheet
-안내를 위해 화면을 부분적으로 덮는 방식 (nonimmersive)
+#### ?와 !의 차이점
+* ?</br>
+일단 옵셔널로 변수를 선언해 줬으니 Xcode는 상자 하나를 만듭니다.
+만약 그곳에  <b style="color: DeepPink">?</b> 가 붙으면 Xcode는 상자에 '노크'를 하게 됩니다.
 
-```swift
-struct modalSheet: View {
-    
-    @State var showView: Bool = false
-    
-    var body: some View {
-        VStack {
-            Button(action: {
-                showView.toggle()
-            }) {
-                Text("Some Sheet")
-                    .font(.title)
-                    .foregroundColor(.black)
-            }
-        }
-        .sheet(isPresented: $showView, content: {
-            sheetView()
-        })
-    }
-}
+만약 상자안에 값이 있으면 '30이라는 값을 가지고 있어'하고 왼쪽처럼 30이라는 값을 얻게 됩니다.
 
-struct sheetView: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                },label: {
-                    Text("Done")
-                        .padding(20)
-                })
-            }
-            Spacer()
-        }
-    }
-}
+하지만 상자를 열었는데 아무것도 없으면 <b style="color: DeepPink">nil</b>값을 반환해 주게 됩니다.
+
+<center><img src="/images/post/optional/optional2.png" alt="Project"></center> <br/>
+
+코드로 다시 확인해보면
+```swift	
+var someValue: Int? = 30
+var value = someValue
 ```
-<br/>
-<center><img src="/images/post/modality/sheet.gif" width="300" alt="Project"></center>
-<br/>
+Xcode는 <b style="color: DeepPink">someValue</b>뒤에 <b style="color: DeepPink">?</b>가 붙었기 때문에<br>
+ '<b style="color: DeepPink">someValue</b>에 정수가 들어갈 수도 있지만 <b style="color: DeepPink">nil</b>이 들어갈 수도 있겠구나'라고 생각할 수 있습니다.
 
-### Fullscreen
-이전 화면을 전체적으로 덮는 방식 (닫기 버튼을 만들어줘야 됨, immersive)
+ 그런데 <b style="color: DeepPink">value</b>라는 변수에 <b style="color: DeepPink">someValue</b>를 넣어주게 되어 value타입도 옵셔널 타입이 되었습니다.
 
-```swift
-.sheet(isPresented: $showView, content: {
-            sheetView()
+ 즉, var value = someValue의 의미는 value는 옵셔널 타입이고 Int타입의 데이터를 가질 수 있는 변수 입니다.
 
-// 부분을 아래와 같이 변경
-
-.fullScreenCover(isPresented: $showView, content: {
-            sheetView()			
+ 만약 value에 타입을 명시해보면 어떻게 될까요?
+ ```swift	
+var someValue: Int? = 30
+// Value of optional type 'Int?' must be unwrapped to a value of type 'Int'
+var value: Int = someValue
 ```
-<br/>
+이렇게 컴파일 에러가 나게 됩니다.
 
-### Popover
-팝오버 방식은 iPad환경에서 사용하고, 화면이 작은 iPhone의 경우에는 sheet방식을 사용합니다.
+<b style="color: DeepPink">value</b>라는 변수에 타입을 명시하게 되면 '<b style="color: DeepPink">value</b>라는 변수는 <b style="color: DeepPink">Int</b>형 데이터밖에 가질 수 없어'라고 명시해줬다는 의미인 것 입니다. 그런데 거기에 <b style="color: DeepPink">someValue</b>라는 옵셔널 타입을 가지고 있는 변수를 지정해주니 당연히 오류가 나게된 것 입니다.
 
-```swift
-struct modalPopover: View {
-    
-    @State var showView: Bool = false
-    
-    var body: some View {
-        ZStack {
-            Color.brown
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                Button(action: {
-                    showView.toggle()
-                }) {
-                    Text("popover")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-            }
-            .popover(isPresented: $showView, content: {
-                sheetView3()
-            })
-        }
-    }
-}
+* !</br>
+<b style="color: DeepPink">!</b>는 언래핑(<b style="color: DeepPink">Unwrapping</b>)이라고도 불립니다. 노크 따위 하지 않고 강제로 값을 꺼내버립니다. 상자에 값이 있던 말던 그냥 일단 값을 가지고 오겠다는 뜻입니다.
 
-struct sheetView3: View {
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    var body: some View {
-        VStack {
-            HStack {
-                Spacer()
-                
-                Button(action: {
-                    presentationMode.wrappedValue.dismiss()
-                },label: {
-                    Text("Done")
-                        .padding(20)
-                })
-            }
-            
-            Spacer()
-        }
-        .frame(width: 500, height: 500)
-    }
-}
+아까 사용했던 예시 코드를 다시 가져와 <b style="color: DeepPink">!</b> 를 붙여보면
+```swift	
+var someValue: Int? = 30
+var value: Int! = someValue
 ```
-<br/>
-<center><img src="/images/post/modality/popover1.gif" width="500" alt="Project"></center>
-<br/>
+이렇게 오류가 사라지게 됩니다. 왜냐하면 상자에서 강제로 값을 꺼냈기 때문입니다.
 
-### Current Context
-현재 문맥에 맞춰서 뜨우는 방식, 화면에 2개 이상의 뷰 컨트롤러가 영역을 차지하고 있는 경우(splitView 같은 경우), 하나의 뷰만 바꾸고 싶을 때 유용합니다.
-<center><img src="/images/post/modality/currentContext.png" alt="Project"></center>
-<br/>
+<b style="color: DeepPink">someValue</b>에 30이라는 값을 줬었고, <b style="color: DeepPink">value</b>상자에서 강제로 값을 꺼냈더니 운이 좋게 Int형 테이터 30이 들어있던거죠.
 
-### Custom sheet animation
-#### Animation
-<a href="/blog/conditional-statement/#TO"><b>삼항연산자</b></a>를 사용해서 구현할 수 있습니다.
+상자에서 강제로 값을 꺼내서 그 값을 value에 넣어준 코드이니 value입장에서는 아무문제가 없었던 것입니다. 
 
-```swift
-struct modalSheetAnimation: View {
-    
-    @State var showView: Bool = false
-    
-    var body: some View {
-        ZStack {
-            Color.brown
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                Button(action: {
-                    showView.toggle()
-                }) {
-                    Text("Sheet")
-                        .font(.title)
-                        .foregroundColor(.white)
-                }
-            }
-            
-            sheetViewA1(showView: $showView)
-                            .padding(.top, 100)
-                            .offset(y: showView ? 0 : UIScreen.main.bounds.height)
-                            .animation(.spring(), value: showView)
-        }
-    }
-}
-
-struct sheetViewA1: View {
-    
-    @Binding var showView: Bool
-    
-    var body: some View {
-        ZStack {
-            Color.white
-                .edgesIgnoringSafeArea(.all)
-            
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Button(action: {
-                        showView.toggle()
-                    },label: {
-                        Text("Done")
-                            .padding()
-                    })
-                }
-                
-                Spacer()
-            }
-        }
-    }
-}
+그런데 만약 상자에서 강제로 값을 꺼냈는데 값이 었다면?
+```swift	
+var someValue: Int? = nil
+var value: Int = someValue!
+//이렇게 컴파일 오류가 나지 않지만
+print(value)
+//error: Execution was interrupted, reason: EXC_BREAKPOINT (code=1, subcode=0x18f6dd21c).
 ```
-<br/>
+이렇게 nil이라는 곳에 접근을 하려고 하면 오류가 납니다.
 
-#### Transition
-이외 transition을 사용하여 다양한 animation을 사용할 수 있습니다.
+<b style="color: DeepPink">!</b>를 사용하여 값이 존재하지 않는 옵셔널 값에 접근 시도하면 런타임 에러가 발생합니다. 
+
+따라서 <b style="color: DeepPink">!</b>를 사용하여 언래핑을 하기 전에는 항상 옵셔널 값이 nil값이 아니라는 것을 확실히 해야 합니다. <b style="color: DeepPink">nil</b>값이 아니라는 것이 확실하지 않은 상황에서 <b style="color: DeepPink">!</b>를 남용하게 되면 오류가 날 가능성이 높아집니다.
+
+또한, <b style="color: DeepPink">!</b> 도 <b style="color: DeepPink">Optional</b>이기 때문에 초기화할 때 값을 요구하지 않습니다. 초기화를 안해주면 <b style="color: DeepPink">?</b>와 마찬가지로 <b style="color: DeepPink">nil</b> 값이 들어가게 됩니다.
 
 ***
 
-## modality를 사용할 때의 주의사항
-1. <b>사용자들이 집중해야 하는 경우에 사용하며, 현재 문맥과 다른 작업을 진행할 때 사용합니다.</b>
-2. <b>alerts와 같이 핵심적인 것을 전달할 때, 뭔가 문제가 생겼을 때, actionable한 상황에서 이상적입니다.</b> <br/>
-alerts는 사용자 경험에 있어서 방해하는 요소이기 때문에 왠만하면 사용하지 않는 것이 좋습니다. (*.ondelete* 같은 정상적인 사용자 행동의 결과로 진행되는 경우)
-3. <b>문맥이 간단하고, 짧을때, 또는 짧은 집중을 요구할 때 사용합니다.</b> <br/>
-modal이 복잡하면 이전에 하고 있던 task를 잊어버리게 할 수 있어 좋지 않은 사용자 경험을 가져다 줍니다. modal view가 서브뷰를 꼭 서브뷰가 있어야 한다면, 하나의 hierarchy 경로만 제공해야 합니다. 추가로 "Done"이라는 버튼은 modal view의 전체 task를 종료하는 것 이외는 사용하지 않는 것이 좋습니다.(choose 등을 사용)
-4. <b>modal view는 언제든지 종료할 수 있게 만드는 것이 좋습니다.</b>
-5. <b>modal의 문맥이 복잡하거나 몰입형일 때는 Fullscreen 모드를 고려해보세요.</b>
-6. <b>"Done", "Cancel"과 같은 나가기 버튼은 항상 있어야 합니다.</b>
-7. <b>사용자가 modal을 닫으려고 할때 사용자가 작성한 내용이 있을경우 확인을 받아 사용자가 데이터를 잃지 않게 도와주세요.</b>
-8. <b>Popover위에는 alerts를 제외하고 어떤 것도 올라가면 안됩니다. 필요한 경우 새로운 modal을 띄우기 위해 popover를 닫아야 합니다.</b>
-9. <b>모달에 제목을 제공하거나 추가적인 설명글을 제공하여 사용자들이 modal view의 task가 무엇인지 알기 쉽게 만들어야 합니다.</b>
-10. <b>modal view에 navigation bar를 사용할 경우 앱의 기본 디자인과 같은 디자인을 사용해야 합니다.</b>
-11. <b>modal을 띄우는 애니메이션이 여러가지 방식이 있는데 그 상황에 적절한 방식을 사용해야 합니다.</b>
+### Optional 변수의 값을 가져오는 방법
+이제 Optional 변수의 값을 가져올 차례입니다.
+
+첫번째로 <b>옵셔널 바인딩(Optional Binding)</b>과 <b>옵셔널 체이닝(Optional Chaining)</b>이 있습니다. 그리고 강제 언래핑(ForcedUnwrapping) 즉 <b style="color: DeepPink">!</b>이 있습니다.
+
+#### 옵셔널 바인딩 (Optional Binding)
+옵셔널 바인딩은 If let(또는 If var)구문과 같이 사용합니다. 즉, 먼저 체크해준다 라고 생각하면 됩니다. 옵셔널에 값이 있는지 없는지 확인하고 값이 있으면 옵셔널이 아닌 형태로 바꿔주는 방식입니다.
+
+<b style="color: DeepPink">nil</b>인지 아니면 값이 있는지의 경우에 따라 결과를 다르게 하고 싶으면 옵셔널 바인딩을 사용하면 됩니다.
+
+```swift	
+func printName(_name : String) {
+   print(_name)
+ }
+ 
+var myName: String? = nil
+//myName 상자에 값이 있으면 name에 myName을 넣어주고 조건을 실행해
+if let name = myName {
+   printName(_name: name)
+ }
+```
+이렇게 실행하게 되면 아무것도 프린트 되지 않습니다. 그 이유는 myName이 nil이기 때문입니다.
+
+<b style="color: DeepPink">if let</b>구문은 'myName상자에 값이 있으면 name에 myName을 넣어주고 조건을 실행해'라는 뜻입니다.
+
+하지만 myName상자에는 nil이 있어서 if let 구문운 작동을 멈추고 print코드를 실행하지 않는 것입니다. 이렇게 값이 있을 때만 바인딩되기 때문에 <b>옵셔널 바인딩</b>이라고 부릅니다.
+
+그렇기에 if let 구문을 통해 <b style="color: DeepPink">nil</b>인 경우와 아닌 경우를 안전하게 대비할 수 있습니다.
+
+#### 옵셔널 체이닝 (Optional Chaining)
+이름처럼 chain으로 이어져 있다고 생각하면 됩니다.
+
+옵셔널 체이닝은 하위 프로퍼티에 옵셔널 값이 있는지 연속적으로 확인하면서, 중간에 하나라도 nil이 발견된다면 nil이 반환되는 형식입니다.
 
 ***
