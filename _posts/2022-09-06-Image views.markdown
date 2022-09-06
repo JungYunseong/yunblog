@@ -30,6 +30,7 @@ Image view에는 PNG, JPEG 및 PDF와 같은 다양한 형식의 이미지 데�
 <b>애니메이션 시퀀스의 모든 이미지에 일정한 크기를 사용하세요.</b> 뷰에 맞게 이미지의 크기를 사전 설정하면 시스템에서 크기를 조정할 필요가 없습니다. 시스템에서 이미지의 크기를 조정해야 하는 경우에 이미지의 크기와 모양을 맞추면 더 좋은 결과를 확인할 수 있습니다.
 
 ***
+
 ## Platform considerations
 <c style="color: Gray">iOS 또는 iPadOS에 대한 추가 고려사항은 없습니다.</c>
 <br>
@@ -46,6 +47,7 @@ Image view에는 PNG, JPEG 및 PDF와 같은 다양한 형식의 이미지 데�
 <b>가능할 경우 SwiftUI를 사용하여 애니메이션을 만드세요.</b> 필요한 경우 WatchKit을 사용하여 이미지 요소 내에서 이미지 시퀀스를 애니메이션화 할 수 있습니다. 개발자 가이던스는 <a href="https://developer.apple.com/documentation/watchkit/wkimageanimatable"></a>를 확인해주세요.
 
 ***
+
 ## Resources
 #### Related
 <a href="https://developer.apple.com/design/human-interface-guidelines/foundations/images">Images</a><br>
