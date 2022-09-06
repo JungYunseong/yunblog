@@ -6,7 +6,7 @@ image:  '/images/post/imageViews/thumbnail.png'
 tags:   [New_HIG]
 ---
 
-> ##### <center>안녕하세요 정윤성입니다.<br>새로운 Human Interface Guidelines를 Study를 통해 공부하며 정리하는 중입니다.</center>
+> ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
 >
 > <cite>✏️ 스터디원: <a href="https://velog.io/@lawn/series/NEW-HIG-2022" target="_blank">@Lawn</a> | <a href="https://velog.io/@andana/series/Lets-Study-HIG" target="_blank">@Dana</a> | <a href="https://velog.io/@halogen/Apple-HIG-Foundation-Layout" target="_blank">@Halogen</a> | <a href="" target="_blank">@Choi</a></cite>
 
