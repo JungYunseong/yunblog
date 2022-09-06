@@ -101,7 +101,7 @@ VoiceOver와 Display Accommodations과 같은 손쉬운 사용 기능은 사람�
 
 ### Haptics
 
-**Support the system-defined haptics.** 시스템 햅틱을 지원합니다. 사용자들은 화면을 볼 수 없는 상황에서 앱을 사용하기 위해 햅틱의 도움을 받을 수있습니다. 예를 들어 시스템 앱은 햅틱을 통해 사용자에게 특정한 이벤트나 작업의 성공 유무를 알려줍니다. 사람들을 혼동하지 않도록 앱에서 시스템 햅틱을 일관되게 사용하십시오. 개발자 가이던스는 <a href="https://developer.apple.com/design/human-interface-guidelines/patterns/playing-haptics">Playing haptics</a>를 확인해주세요.<br>
+**Support the system-defined haptics.** 시스템 햅틱을 지원합니다. 사용자들은 화면을 볼 수 없는 상황에서 앱을 사용하기 위해 햅틱의 도움을 받을 수있습니다. 예를 들어 시스템 앱은 햅틱을 통해 사용자에게 특정한 이벤트나 작업의 성공 유무를 알려줍니다. 사람들을 혼동하지 않도록 앱에서 시스템 햅틱을 일관되게 사용하십시오. 가이던스는 <a href="playing-haptics">Playing haptics</a>를 확인해주세요.<br>
 
 ## VoiceOver
 
@@ -155,7 +155,7 @@ Hint : 선택된 요소에 대한 추가 설명, 요소를 동작시키기 위�
 <c style="color: MediumSeaGreen"> 📢Lawn: 하단의 이미지가 로터입니다. Voice Over 사용자는 이런 로터에  손가락을 돌리는 제스쳐를 사용해 다양한 기능들을 불러올 수있습니다.</c>
 <center><img src="/images/post/accessibility/accessibility11.png" alt="Rotor"></center>
 
-**In iPadOS and macOS, make sure people can use the keyboard to navigate and interact with all onscreen components in your app.** iPadOS 및 macOS에서 사람들이 키보드를 사용하여 앱의 모든 화면 구성 요소를 찾을 수있는지 확인해야합니다. 사용자들은 키보드만 사용하여 모든 작업을 수행할 수 있습니다. 손쉬운 사용 단축키 패널 [accessibility keyboard shortcuts](https://support.apple.com/en-us/HT204434) 외에도 시스템은 다른 여러 [keyboard shortcuts](https://support.apple.com/en-us/HT201236)을 제공합니다. 모든 사용자들이 사용할 수있게 하기위해 시스템에 정의된 키보드의 단축키를 바꾸는 것을 지양합니다. [Keyboards](https://developer.apple.com/design/human-interface-guidelines/inputs/keyboards)를 참조하세요.
+**In iPadOS and macOS, make sure people can use the keyboard to navigate and interact with all onscreen components in your app.** iPadOS 및 macOS에서 사람들이 키보드를 사용하여 앱의 모든 화면 구성 요소를 찾을 수있는지 확인해야합니다. 사용자들은 키보드만 사용하여 모든 작업을 수행할 수 있습니다. 손쉬운 사용 단축키 패널 [accessibility keyboard shortcuts](https://support.apple.com/en-us/HT204434) 외에도 시스템은 다른 여러 [keyboard shortcuts](https://support.apple.com/en-us/HT201236)을 제공합니다. 모든 사용자들이 사용할 수있게 하기위해 시스템에 정의된 키보드의 단축키를 바꾸는 것을 지양합니다. [Keyboards](/blog/keyboards)를 참조하세요.
 <c style="color: MediumSeaGreen"> 📢Lawn: 손쉬운 사용 단축키 패널에서는 확대/축소, VoiceOver, 고정 키 등의 일반적인 손쉬운 사용 기능을 빠르게 켜거나 끌 수 있는 단축키를 제공합니다.</c>
 <center><img src="/images/post/accessibility/accessibility13.png" alt="Rotor"></center>
 
@@ -177,7 +177,7 @@ Hint : 선택된 요소에 대한 추가 설명, 요소를 동작시키기 위�
   </div>
 </div>
 
-**Increase the size of meaningful interface icons as font size increases.** 글꼴의 크기가 커질수록 인터페이스 아이콘의 크기가 커집니다. 아이콘이 중요한 의미를 담고 있다면 크기가 커져도 보기 쉽도록 해야 합니다. [SF Symbols,](https://developer.apple.com/design/human-interface-guidelines/foundations/sf-symbols/)를 사용하면 자동으로 크기가 조정되는 아이콘을 사용할 수있습니다.
+**Increase the size of meaningful interface icons as font size increases.** 글꼴의 크기가 커질수록 인터페이스 아이콘의 크기가 커집니다. 아이콘이 중요한 의미를 담고 있다면 크기가 커져도 보기 쉽도록 해야 합니다. [SF Symbols](/blog/sf-symbols)를 사용하면 자동으로 크기가 조정되는 아이콘을 사용할 수있습니다.
 <div class="gallery-box">
   <div class="gallery">
     <img src="/images/post/accessibility/accessibility18.png" alt="icons-small">
