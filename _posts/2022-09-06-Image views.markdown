@@ -6,8 +6,7 @@ image:  '/images/post/imageViews/thumbnail.png'
 tags:   [New_HIG]
 ---
 
-> ##### <center>안녕하세요 정윤성입니다.<br>새로운 Human Interface Guidelines를 Study를 통해 공부하며 정리하는 중입니다.</center>
->
+> ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
 > <cite>✏️ 스터디원: <a href="https://velog.io/@lawn/series/NEW-HIG-2022" target="_blank">@Lawn</a> | <a href="https://velog.io/@andana/series/Lets-Study-HIG" target="_blank">@Dana</a> | <a href="https://velog.io/@halogen/Apple-HIG-Foundation-Layout" target="_blank">@Halogen</a> | <a href="" target="_blank">@Choi</a></cite>
 
 ***
@@ -21,6 +20,8 @@ Image view는 투명하거나 불투명한 배경에 단일 이미지(때에 따
 
 <b>인터페이스에 아이콘을 표시하려면 image view 대신 기호 또는 인터페이스 아이콘을 사용하는 것이 좋습니다.</b> <a href="/blog/sf-symbols">SF Symbols</a>는 개발자가 다양한 색상과 선명도로 사용할 수 있도록 간편한 벡터 기반의 이미지 라이브러리를 제공합니다. 글리프 또는 템플릿 이미지라고도 하는 <a href="/blog/icons">인터페이스 아이콘</a>은 일반적으로 투명하지 않은 픽셀이 색상을 수신할 수 있는 비트맵 이미지입니다. 기호와 인터페이스 아이콘 모두 개발자가 선택한 강조 색상(accent color)을 사용할 수 있습니다.
 <br><br>
+
+***
 
 ## Content
 Image view에는 PNG, JPEG 및 PDF와 같은 다양한 형식의 이미지 데이터가 포함될 수 있습니다. 자세한 내용은 <a href="/blog/images">Image</a>를 확인해주세요.
@@ -63,14 +64,14 @@ Image view에는 PNG, JPEG 및 PDF와 같은 다양한 형식의 이미지 데�
 <div class="gallery-box">
   <div class="video-gallery">
     <a id="wwdc2021-10021" href="https://developer.apple.com/videos/play/wwdc2021/10021/">
-	<img class="video-grid-img" src="https://devimages-cdn.apple.com/wwdc-services/images/119/4887/4887_wide_250x141_2x.jpg" width="250" height="141"><br>
-	<b>Add rich graphics to your<br> SwiftUI app</b><br>
-	WWDC21
-</a>
+		<img src="https://devimages-cdn.apple.com/wwdc-services/images/119/4887/4887_wide_250x141_2x.jpg" width="250" height="141"><br>
+		<b>Add rich graphics to your<br>SwiftUI app</b><br>
+		WWDC21
+	</a>
     <a id="wwdc2020-10175" href="https://developer.apple.com/videos/play/wwdc2020/10175/">
-	<img class="video-grid-img" src="https://devimages-cdn.apple.com/wwdc-services/images/49/3823/3823_wide_250x141_2x.jpg" width="250" height="141"><br>
-	<b>The details of UI<br> typography</b><br>
-	WWDC 2020
-</a>
+		<img src="https://devimages-cdn.apple.com/wwdc-services/images/49/3823/3823_wide_250x141_2x.jpg" width="250" height="141"><br>
+		<b>The details of UI<br>typography</b><br>
+		WWDC 2020
+	</a>
   </div>
 </div>
