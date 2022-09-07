@@ -16,7 +16,7 @@ Image view는 투명하거나 불투명한 배경에 단일 이미지(때에 따
 <br><br>
 
 ## Best Practices
-<b>주목적이 단순히 이미지 표시인 경우 image view를 사용합니다.</b> 때에 따라 가끔 이미지를 인터랙티브하게 하고 싶을 때는, image view에 동작을 추가하는 대신 시스템에서 제공하는 <a href="/blog/button">버튼</a>을 사용해 이미지를 표시하는 방법을 고려해보세요. 
+<b>주목적이 단순히 이미지 표시인 경우 image view를 사용합니다.</b> 때에 따라 가끔 이미지를 인터랙티브하게 하고 싶을 때는, image view에 동작을 추가하는 대신 시스템에서 제공하는 <a href="https://developer.apple.com/design/human-interface-guidelines/components/menus-and-actions/buttons">버튼</a>을 사용해 이미지를 표시하는 방법을 고려해보세요. 
 
 <b>인터페이스에 아이콘을 표시하려면 image view 대신 기호 또는 인터페이스 아이콘을 사용하는 것이 좋습니다.</b> <a href="https://developer.apple.com/design/human-interface-guidelines/foundations/sf-symbols/">SF Symbols</a>는 개발자가 다양한 색상과 선명도로 사용할 수 있도록 간편한 벡터 기반의 이미지 라이브러리를 제공합니다. 글리프 또는 템플릿 이미지라고도 하는 <a href="https://developer.apple.com/design/human-interface-guidelines/foundations/icons">인터페이스 아이콘</a>은 일반적으로 투명하지 않은 픽셀이 색상을 수신할 수 있는 비트맵 이미지입니다. 기호와 인터페이스 아이콘 모두 개발자가 선택한 강조 색상(accent color)을 사용할 수 있습니다.
 <br><br>
