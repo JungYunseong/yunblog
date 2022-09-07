@@ -12,7 +12,7 @@ tags:   [New_HIG]
 
 ***
 
-# App icons
+## App icons
 
 독특하고 기억에 남는 아이콘은 App의 특성과 개성을 전달하고 사람들이 App Store나 기기에서 해당 앱이나 게임을 한 눈에 알아볼 수 있도록 도와줍니다.
 
@@ -49,7 +49,7 @@ tags:   [New_HIG]
 
 ***
 
-# Platform considerations
+## Platform considerations
 
 ### iOS, iPadOS
 **Don’t add an overlay or border to your Settings icon.** 설정 아이콘에 오버레이나 테두리를 추가하지 마세요. iOS는 설정의 흰색 배경에서 잘 보이도록 모든 아이콘에 자동으로 1픽셀 획을 추가합니다.
@@ -73,7 +73,6 @@ macOS에서 앱 아이콘은 둥근 직사각형 모양, 정면을 향한 원근
 <center><img src="/images/post/appIcons/appIcons6.png" alt="app-icon-layout-guides"></center>
 
 ### tvOS
-
 tvOS 앱 아이콘은 2~5개의 레이어를 사용하여 사람들의 시선에 맞춰 깊이와 사용자에게 역동적인 느낌을 줍니다. [Layered images](https://developer.apple.com/design/human-interface-guidelines/foundations/images#layered-images)을 참조하세요.
 
 **Use appropriate layer separation.** 레이어 분리를 적절히 사용합니다. 아이콘에 로고가 포함된 경우 로고를 배경에서 분리합니다. 아이콘에 텍스트가 포함된 경우 parallax effect가 발생할 때 다른 레이어에 의해 숨겨지지 않도록 텍스트를 앞으로 가져옵니다.
