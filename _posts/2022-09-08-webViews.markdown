@@ -1,0 +1,48 @@
+---
+layout: post
+title:  Web views
+date:   2022-09-07 00:00:00 +0300
+image:  '/images/post/webViews/thumbnail.png'
+tags:   [New_HIG]
+---
+
+> ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
+> <cite>✏️ 스터디원: <a href="https://velog.io/@lawn/series/NEW-HIG-2022" target="_blank">@Lawn</a> | <a href="https://velog.io/@andana/series/Lets-Study-HIG" target="_blank">@Dana</a> | <a href="https://velog.io/@halogen/Apple-HIG-Foundation-Layout" target="_blank">@Halogen</a> | <a href="" target="_blank">@Choi</a></cite>
+
+***
+
+# Web views
+Web view는 내장 HTML 및 웹 사이트와 같은 다양한 웹 콘텐츠를 앱에 직접 로드하고 표시합니다.<br><br>
+예를 들어, 메일은 web view를 사용하여 메시지의 HTML 내용을 표시합니다.
+<br><br>
+
+## Best Practices
+**필요에 따라 전방 및 후방 탐색을 활성화합니다.** web view는 다음페이지 및 이전페이지 네비게이션을 지원하지만 이 동작은 기본적으로 비활성화 되어 있습니다. 다른 사용자가 web view를 사용하여 여러 페이지를 방문할 경우, 앞으로 및 뒤로가기 네이게이션을 사용 가능으로 설정하고 이러한 기능을 시작할 수 있는 해당 컨트롤을 제공합니다.
+
+**Web view를 사용하여 웹 브라우저를 빌드하지 마세요.** Web view를 사용하여 사용자가 앱의 컨텍스트를 벗어나지 않고 웹 사이트에 잠시 액세스할 수 있도록 하는 것도 좋지만, 사람들이 웹을 탐색하는 주된 방법은 Safari입니다. 앱에서 Safari 가능을 복제할 필요가 없으며 권장되지 않습니다.
+
+ ***
+
+## Platform considerations
+<c style="color: Gray">iOS, iPadOS또는 macOS에 대한 추가 고려사항은 없습니다. tvOS 또는 watchOS에서는 지원되지 않습니다.</c>
+<br>
+
+***
+
+## Resources
+#### Related
+[Webkit.org](https://developer.apple.com/design/human-interface-guidelines/components/layout-and-organization/labels)<br>
+
+#### Developer documentation
+[WKWebView — WebKit](https://papago.naver.net/apis/site/proxy?url=https%3A%2F%2Fdeveloper.apple.com%2Fdocumentation%2Fwebkit%2Fwkwebview)<br>
+
+#### Videos
+<div class="gallery-box">
+  <div class="video-gallery">
+    <a id="wwdc2021-10032" href="https://developer.apple.com/videos/play/wwdc2021/10032/">
+		<img src="https://devimages-cdn.apple.com/wwdc-services/images/119/4920/4920_wide_250x141_2x.jpg" width="250" height="141"><br>
+		<b>Explore WKWebView<br>additions</b><br>
+		WWDC21
+	</a>
+  </div>
+</div>
