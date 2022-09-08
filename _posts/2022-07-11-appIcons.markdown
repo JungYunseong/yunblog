@@ -104,7 +104,7 @@ watchOS 앱 아이콘은 원형의 단순한 아이콘이며 텍스트(Label)를
 
 ***
 
-## 🍀 Specifications
+## Specifications
 ### App icon attributes
 모든 플랫폼의 앱 아이콘은 PNG 형식을 사용하고 다음 color spaces를 지원합니다.
 
