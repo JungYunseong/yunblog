@@ -10,7 +10,7 @@ tags:   [SwiftUI, HIG, Development]
 
 > Optional: "선택적인" - 있어도 되고 없어도 되는 존재
 
-Swift에서도 마찬가지로 옵셔널 값이 있을 수도, 없을 수도 있습니다.</br>
+Swift에서도 마찬가지로 옵셔널 값이 있을 수도, 없을 수도 있습니다.<br>
 변수(var)나 상수(let)이 nil값일 수 있다는 뜻.
 
 ***
@@ -48,8 +48,8 @@ number = nil
 .
 ```
 이런 식으로 선언이 되어있는데, 여기서 우리는 옵셔널이 열거형이라는 것을 알 수 있습니다.
-<b style="color: DeepPink">none</b>: nil값이 없다.</br>
-<b style="color: DeepPink">some</b>(Wrapped): 값이 있다.</br>
+<b style="color: DeepPink">none</b>: nil값이 없다.<br>
+<b style="color: DeepPink">some</b>(Wrapped): 값이 있다.<br>
 또, 옵셔널이 열거형이기 때문에 switch구문을 이용해서 값이 있고 없음을 확인할 수 있습니다.
 
 ```swift	
@@ -98,7 +98,7 @@ for item in numbers {
 <center><img src="/images/post/optional/optional1.PNG" alt="Project"></center> <br/>
 
 #### ?와 !의 차이점
-* ?</br>
+* ?<br>
 일단 옵셔널로 변수를 선언해 줬으니 Xcode는 상자 하나를 만듭니다.
 만약 그곳에  <b style="color: DeepPink">?</b> 가 붙으면 Xcode는 상자에 '노크'를 하게 됩니다.
 
@@ -130,7 +130,7 @@ var value: Int = someValue
 
 <b style="color: DeepPink">value</b>라는 변수에 타입을 명시하게 되면 '<b style="color: DeepPink">value</b>라는 변수는 <b style="color: DeepPink">Int</b>형 데이터밖에 가질 수 없어'라고 명시해줬다는 의미인 것 입니다. 그런데 거기에 <b style="color: DeepPink">someValue</b>라는 옵셔널 타입을 가지고 있는 변수를 지정해주니 당연히 오류가 나게된 것 입니다.
 
-* !</br>
+* !<br>
 <b style="color: DeepPink">!</b>는 언래핑(<b style="color: DeepPink">Unwrapping</b>)이라고도 불립니다. 노크 따위 하지 않고 강제로 값을 꺼내버립니다. 상자에 값이 있던 말던 그냥 일단 값을 가지고 오겠다는 뜻입니다.
 
 아까 사용했던 예시 코드를 다시 가져와 <b style="color: DeepPink">!</b> 를 붙여보면
