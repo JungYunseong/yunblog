@@ -3,7 +3,7 @@ layout: post
 title:  Web views
 date:   2022-09-07 00:00:00 +0300
 image:  '/images/post/webViews/thumbnail.png'
-tags:   [New_HIG]
+tags:   [New_HIG, Components]
 ---
 
 > ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>

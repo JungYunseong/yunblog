@@ -3,7 +3,7 @@ layout: post
 title:  App icons
 date:   2022-07-11 00:00:00 +0300
 image:  '/images/post/appIcons/thumbnail.png'
-tags:   [New_HIG]
+tags:   [New_HIG, Foundations]
 ---
 
 > ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>

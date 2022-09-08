@@ -3,7 +3,7 @@ layout: post
 title:  Accessibility
 date:   2022-07-07 00:00:00 +0300
 image:  '/images/post/accessibility/thumbnail.png'
-tags:   [New_HIG]
+tags:   [New_HIG, Foundations]
 ---
 
 > ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
@@ -50,11 +50,9 @@ tags:   [New_HIG]
 ***
 
 ## Interactions
-
 VoiceOver와 Display Accommodations과 같은 손쉬운 사용 기능은 사람들이 본인의 기기를 쉽게 사용할 수 있는 다양한 방식을 제공해 줍니다. 이러한 기술과 기능은 상호작용 시스템과 통합되므로 앱에서 올바르게 지원하는 것이 중요합니다.
 
 ### Gestures
-
 **Don’t override the platform gestures.** 애플이 제공하는 시스템 제스처(예: 아래로 스와이프하여 알림 센터 표시 또는 시스템 설정에서 사용할 수 있는 macOS 트랙패드 제스처)가 사람들은 현재 사용 중인 앱과 상관없이 동일하게 사용되기를 원합니다.
 
 **Prefer simplified gestures for common interactions.** 사람들은 단순한 제스처를 선호합니다. Complex gestures, Long presses 또는 Repeated button presses와 같은 복잡한 제스처는 많은 사람들에게 어려울 수 있습니다. 사용자의 경험을 위해 가능한 가장 간단한 제스처를 사용하는 것이 좋습니다.
@@ -67,7 +65,6 @@ VoiceOver와 Display Accommodations과 같은 손쉬운 사용 기능은 사람�
 **Make drag and drop accessible in your iOS or iPadOS app.**  iOS 또는 iPadOS 앱에서 드래그 앤 드롭에 사용할 수 있도록 설정합니다. accessibility API를 사용하여 앱에서 드래그 또는 드롭하고자 하는 대상을 식별 하고, 사용자들이 드래그 앤 드롭하는 데 도움이 될 수 있습니다. 개발자 가이던스는 <a href="https://developer.apple.com/documentation/objectivec/nsobject/2891001-accessibilitydragsourcedescripto">accessibilityDragSourceDescriptors</a>와 <a href="https://developer.apple.com/documentation/objectivec/nsobject/2891048-accessibilitydroppointdescriptor">accessibilityDropPointDescriptors</a>를 확인해주세요.
 
 ### Buttons and controls
-
 **Give all touchscreen controls and interactive elements a hit target that measures at least 44x44 pt.** 모든 touchscreen controls과 Interactice elements에 최소 44x44pt의 터치 포인트를 제공해야 합니다. 제한된 동작을 할수밖에 없는 사람들은 앱을 사용하는데 어려움이 없는 크기의 터치 포인트가 필요합니다.
 
 **Characterize the accessibility of custom elements.** 손쉬운 사용 기능을 통해 사용자에 맞게 설정을 합니다. 사용자는 이를 통해 장애 보조기술로 사용할 수있습니다. 예를 들어 [button](https://developer.apple.com/documentation/uikit/uiaccessibilitytraits/1620194-button) 또는 [NSAccessibilityButton](https://developer.apple.com/documentation/appkit/nsaccessibilitybutton)을 사용하여 VoiceOver가 버튼의 내용을 사용자에게 알려주는 것 등이 있습니다.
@@ -89,7 +86,6 @@ VoiceOver와 Display Accommodations과 같은 손쉬운 사용 기능은 사람�
 **Consider giving links a visual indicator in addition to color, such as an underline.** 색맹이나 색에 대한 인지능력이 부족한 사용자들을 위해 색상 외에 시각적인 표시를 함께 제공해주는 것이 좋습니다. 예를 들면 활성화 색과 함께 밑줄을 함께 표시해주는 것으로 더 좋은 사용자 경험을 제공할 수있습니다.
 
 ### User input
-
 **Let people input information by speaking instead of typing.** 받아쓰기 기능을 사용해 타이핑을 하는 것 대신 직접 말하는 것으로 정보를 입력할 수 있습니다. 텍스트 입력 필드에 받아쓰기 버튼을 추가하면 사용자들은 타이핑 대신 구두로 텍스트를 입력할 수있습니다. 사용자 지정 키보드를 만드는 경우 받아쓰기용 마이크 키를 포함해야 합니다.
 <c style="color: MediumSeaGreen"> 📢Lawn: 설정 > 일반 > 키보드 > 받아쓰기 활성화를 켜서 밑에 이미지와 같이 사용이 가능합니다. 아이폰 사용 설명서</c>
 <center><img src="/images/post/accessibility/accessibility6.png" alt="User inputs"></center>
@@ -100,15 +96,13 @@ VoiceOver와 Display Accommodations과 같은 손쉬운 사용 기능은 사람�
 <c style="color: SteelBlue">plain text : 평문, 암호화되지 않은 포맷이 되지 않은 텍스트</c><br>
 
 ### Haptics
+**Support the system-defined haptics.** 시스템 햅틱을 지원합니다. 사용자들은 화면을 볼 수 없는 상황에서 앱을 사용하기 위해 햅틱의 도움을 받을 수있습니다. 예를 들어 시스템 앱은 햅틱을 통해 사용자에게 특정한 이벤트나 작업의 성공 유무를 알려줍니다. 사람들을 혼동하지 않도록 앱에서 시스템 햅틱을 일관되게 사용하십시오. 개발자 가이던스는 <a href="https://developer.apple.com/design/human-interface-guidelines/patterns/playing-haptics">Playing haptics</a>를 확인해주세요.<br>
 
-**Support the system-defined haptics.** 시스템 햅틱을 지원합니다. 사용자들은 화면을 볼 수 없는 상황에서 앱을 사용하기 위해 햅틱의 도움을 받을 수있습니다. 예를 들어 시스템 앱은 햅틱을 통해 사용자에게 특정한 이벤트나 작업의 성공 유무를 알려줍니다. 사람들을 혼동하지 않도록 앱에서 시스템 햅틱을 일관되게 사용하십시오. 가이던스는 <a href="playing-haptics">Playing haptics</a>를 확인해주세요.<br>
-
+***
 ## VoiceOver
-
 VoiceOver는 화면 콘텐츠에 대한 음성 설명을 제공하여 사람들이 화면을 볼 수 없을 때 정보를 얻고 탐색할 수 있도록 도와줍니다.
 
 ### Content descriptions
-
 **Provide alternative descriptions for all images that convey meaning.** 모든 이미지에 대해 대체 설명을 제공합니다. 만약 콘텐츠에 의미있는 이미지를 사용하지 않는다면 VoiceOver 사용자의 앱 사용경험이 좋지 못할 수있습니다. 이미지를 볼 수 있는 사람에게 어떤 내용인지 설명해 주세요. VoiceOver는 이미지와 캡션을 둘러싼 텍스트를 읽기 때문에 이미지 자체가 전달하는 의미를 전달하는 것에 노력하는 것이 좋습니다.
 <center><img src="/images/post/accessibility/accessibility7.png" alt="The alternative description"></center>
 
@@ -126,7 +120,6 @@ VoiceOver는 화면 콘텐츠에 대한 음성 설명을 제공하여 사람들�
 스크립트는 청각 및 시각 정보를 모두 포함하는 비디오에 대한 완전한 텍스트 설명을 제공하므로 사람들이 다양한 방식으로 비디오를 즐길 수 있습니다. 개발자 가이던스는 [Selecting subtitles and alternative audio tracks](https://developer.apple.com/documentation/avfoundation/media_playback_and_selection/selecting_subtitles_and_alternative_audio_tracks)를 확인해주세요.
 
 ### Navigation
-
 **Make sure VoiceOver users can navigate to every element.** VoiceOver를 사용하면 사용자는 해당 앱이나 버튼이 어느 위치에 있고 어떤 기능인지 알 수있습니다. 기본적으로 시스템에서 제공하는 UI 구성 요소에는 이 정보가 포함되어 있지만 커스텀을 한 UI 요소는 정보를 제공하지 않는 한 VoiceOver를 사용해 사용자들이 원하는 기능을 찾고 사용하도록 도울 수 없습니다. 개발자 가이던스는 [Accessibility modifiers](https://developer.apple.com/documentation/swiftui/view-accessibility)를 확인해주세요.
 
 **Improve the VoiceOver experience by specifying how elements should be grouped, ordered, or linked.** 이미지와 텍스트와 같은 요소들을 그룹화, 정렬 또는 연결하여 사용자들이 좀더 손쉽게 정보를 얻을 수있도록 합니다. 예를 들어, 아래 이미지는 각 문구가 그 위의 이미지에 대한 캡션임을 보여주기 위해 이미지의 근처와 중앙에 배치합니다. 그러나 VoiceOver에게 각 이미지를 해당 문구로 그룹화하지 않으면 VoiceOver는 "다양한 망고가 들어 있는 큰 용기.(이미지) 많은 녹색 아티초크를 담고 있는 큰 용기.(이미지) 망고는 Mangifera 속에 속하는 나무에서 나옵니다.(텍스트) 아티초크는 다양한 종류의 엉겅퀴에서 나옵니다.”(텍스트) 순서로 사용자에게 알려줍니다. VoiceOver가 기본적으로 위에서 아래로 요소를 읽기 때문에 이런 문제가 발생합니다. 개발자 가이던스는 [shouldGroupAccessibilityChildren](https://developer.apple.com/documentation/objectivec/nsobject/1615143-shouldgroupaccessibilitychildren)와 [accessibilityTitleUIElement](https://developer.apple.com/documentation/appkit/nsaccessibility/1535155-accessibilitytitleuielement?language=occ)를 확인해주세요.
@@ -159,8 +152,9 @@ Hint : 선택된 요소에 대한 추가 설명, 요소를 동작시키기 위�
 <c style="color: MediumSeaGreen"> 📢Lawn: 손쉬운 사용 단축키 패널에서는 확대/축소, VoiceOver, 고정 키 등의 일반적인 손쉬운 사용 기능을 빠르게 켜거나 끌 수 있는 단축키를 제공합니다.</c>
 <center><img src="/images/post/accessibility/accessibility13.png" alt="Rotor"></center>
 
-## Text display
+***
 
+## Text display
 **In iOS, iPadOS, tvOS, and watchOS, use Dynamic Type and test that your app’s layout adapts to all font sizes.** iOS, iPadOS, tvOS 및 watchOS에서 앱의 레이아웃에 맞추어 모든 글꼴 크기가 자동으로 맞게 조정되는지 확인합니다. Dynamic Type을 사용하면 사용자들은 자신이 원하는 적합한 글꼴 크기를 선택할 수 있습니다. 텍스트와 글리프가 모든 글꼴 크기에서 읽을 수 있는지 확인합니다. 예를 들어 iPhone 또는 iPad의 경우 설정 > 손쉬운 사용 > 디스플레이 및 텍스트 크기 > 큰 텍스트에서 손쉬운 텍스트 크기 확대를 켜고 앱을 사용할때 자동으로 잘 맞추어지는지 확인할 수있습니다. 각 플랫폼에 대한 Sketch, Photoshop 및 Adobe XD [Apple Design Resources](https://developer.apple.com/design/resources/)에서 Dynamic Type 크기 표를 다운로드할 수 있습니다.
 <center><img src="/images/post/accessibility/accessibility14.png" alt="Text display"></center>
 <c style="color: MediumSeaGreen"> 📢Lawn: Dynamic Type은 텍스트의 Font Size를 정해 놓은 것이 아니라 스타일로 지정하는 것을 이릅니다. 스토리보드 또는 코드로 설정할 수 있습니다. 밑에 보이는 표가 각 스타일에 따른 사이즈를 표시한 Dynamic Type입니다.</c>
@@ -203,8 +197,8 @@ Hint : 선택된 요소에 대한 추가 설명, 요소를 동작시키기 위�
 
 **Make sure custom fonts are legible.** 긴 텍스트 단락에는 기울임꼴 또는 모든 문자를 대문자로 표기하지 마십시오. 기울임꼴 및 대문자는 가끔 강조하는 데 적합하지만 이러한 스타일을 과도하게 사용하면 텍스트를 읽기 어렵게 만듭니다.
 
+***
 ## Color and effects
-
 **Don’t rely solely on color to differentiate between objects or communicate important information.** 색상을 사용하여 정보를 전달하는 경우 모든 사람이 인식할 수 있도록 텍스트 레이블이나 글리프 모양을 제공해야 합니다.
 
 **Prefer system colors for text.** 시스템 색상 사용하는 것이 좋습니다. 텍스트에 시스템 색상을 사용하면 색상 반전 및 대비 증가와 같은 손쉬운 사용 기능에 맞게 알아서 맞춰줍니다.
