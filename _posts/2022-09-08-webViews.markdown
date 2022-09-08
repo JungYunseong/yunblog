@@ -24,7 +24,7 @@ Web view는 내장 HTML 및 웹 사이트와 같은 다양한 웹 콘텐츠를 �
  ***
 
 ## Platform considerations
-<c style="color: Gray">iOS, iPadOS또는 macOS에 대한 추가 고려사항은 없습니다. tvOS 또는 watchOS에서는 지원되지 않습니다.</c>
+<c style="color: Gray">iOS, iPadOS 또는 macOS에 대한 추가 고려사항은 없습니다. tvOS 또는 watchOS에서는 지원되지 않습니다.</c>
 <br>
 
 ***
