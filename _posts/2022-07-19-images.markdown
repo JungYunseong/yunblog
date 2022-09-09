@@ -1,0 +1,161 @@
+---
+layout: post
+title:  Images
+date:   2022-07-19 01:00:00 +0300
+image:  '/images/post/images/thumbnail.png'
+tags:   [New_HIG, Foundations]
+---
+
+> ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
+>
+> <cite>✏️ 스터디원: <a href="https://velog.io/@lawn/series/NEW-HIG-2022" target="_blank">@Lawn</a> | <a href="https://velog.io/@andana/series/Lets-Study-HIG" target="_blank">@Dana</a> | <a href="https://velog.io/@halogen/Apple-HIG-Foundation-Layout" target="_blank">@Halogen</a> | <a href="" target="_blank">@Choi</a></cite>
+
+***
+
+# Images
+지원하는 모든 장치에서 아트웍이 멋지게 보이도록 하기위해 시스템이 화면에 콘텐츠를 표시하는 방법과 적절한 배율로 작업물을 사람들에게 보여주는 방법을 알아봅시다.
+
+## Scale factors
+<c style="color: MediumSeaGreen"> 📢Dana: 이미지 화질을 결정하는 스케일 팩터, 정사각형 모양의 작은상자(픽셀) 안에 각 색상이 채워지고, 픽셀이 여러개 모여 이미지로 보이게 됩니다. 그래서 같은 크기의 이미지라도 픽셀의 개수가 많을수록 이미지가 섬세하고 정교하게 보입니다.</c><br>
+
+모든 플랫폼은 디스플레이의 픽셀의 위치를 기반으로 하는 좌표 시스템을 사용합니다. 표준 해상도 디스플레이는 1:1 pixel density(@1x라고도 함)를 가지며 여기서 1픽셀은 1포인트와 같습니다. 고해상도 디스플레이는 2:1 또는 3:1과 같이 pixel density가 더 높습니다. 2:1 pixel density(@2x라고 함)는 배율이 2이고 3:1 pixel density(@3x라고 함)는 배율이 3입니다. pixel density가 높기 때문에 고해상도 디스플레이에는 더 많은 픽셀이 포함된 이미지가 필요합니다.
+<center><img src="/images/post/images/images1.png" alt="pixels"></center><br>
+
+***
+
+## Formats
+다양한 유형의 이미지를 생성할 때 다음 권장 사항을 고려하십시오.
+<div class="table-container">
+  <table>
+    <tr><th>Image type</th><th>Format</th></tr>
+    <tr><td>Bitmap or raster work</td><td>De-interlaced PNG files</td></tr>
+    <tr><td>PNG graphics that don't require full 24-bit color</td><td>An 8-bit color palette</td></tr>
+    <tr><td>Photos</td><td>JPEG files, optimized as necessary, or HEIC files</td></tr>
+    <tr><td>Flat icons, interface icons, and other flat artwork that requires high-resolution scaling</td><td>PDF or SVG files</td></tr>
+  </table>
+</div>
+
+<c style="color: MediumSeaGreen"> 📢Dana:<br>
+- 비트맵 이미지 : 픽셀 안에 색상정보가 기억되는 방식의 파일형태로,해상도를 줄였다 늘렸다 하면 화질이 깨질 우려가 있습니다. 고정되어 있는 이미지에 주로 사용됩니다. (PNG, JPG 등)<br>
+- 벡터 이미지 : 획의 이동 정보가 기억되는 방식의 파일형태로, 해상도를 줄였다 늘렸다 해도 화질이 깨질 우려가 없습니다. 일러스트를 통한 아트워크를 만들었을 때나 반응형에서 작동하는 아이콘 이미지에 주로 사용됩니다. (PDF, SVG 등)
+</c><br>
+
+***
+
+## Best practices
+Supply high-resolution images for all artwork in your app, for every device you support. 지원하는 모든 기기의 앱에 고해상도 아트워크 이미지를 제공하세요. 각 이미지의 픽셀 수에 특정 배율을 곱하면 됩니다. 프로젝트의 asset 카탈로그에 각 이미지를 추가할 때 파일 이름에 "@1x", "@2x" 또는 "@3x"를 추가하여 스케일 팩터를 식별합니다. [Layout](https://developer.apple.com/design/human-interface-guidelines/foundations/layout)을 참고하고, 다음 값을 지침으로 사용하십시오.
+
+<div class="table-container">
+  <table>
+    <tr><th>Playform</th><th>Scale factors</th></tr>
+    <tr><td>iOS</td><td>@2x and @3x</td></tr>
+    <tr><td>iPadOS</td><td>@2x</td></tr>
+    <tr><td>macOS, tvOS</td><td>@1x and @2x</td></tr>
+    <tr><td>watchOS</td><td>@2x</td></tr>
+  </table>
+</div>
+
+**In general, design images at the lowest resolution and scale them up to create high-resolution assets.** 일반적으로 가장 낮은 해상도에서 이미지를 디자인하고, 확대하여 고해상도 에셋을 만듭니다. 크기를 조정할 수 있는 벡터값을 사용하는 경우 제어점을 전체 값에 배치하여 1x에서 깔끔하게 정렬되도록 할 수 있습니다. 2x와 3x는 1x의 배수이기 때문에 이 위치 지정을 통해 포인트는 더 높은 해상도에서 래스터 그리드에 깔끔하게 정렬된 상태를 유지할 수 있습니다. (래스터화 : 벡터의 스케일 팩터가 이미지화 된 것)
+
+**Include a color profile with each image.** 각 이미지에 색상 프로필을 포함합니다. 색상 프로필을 사용하면 앱의 색상이 다양한 디스플레이에서 의도한 대로 표시될 수 있습니다. [Color Management](/blog/color/#color-management)를 참고하세요.
+
+**Always test images on a range of actual devices.** 다양한 실제 장치에서 이미지를 테스트하세요. 실제 잘 만들져 보이는 이미지가 다른 장치에서 볼 때 픽셀화되거나 늘어나거나 깨져서 나타날 수 있습니다.
+
+***
+
+## Platform considerations
+<c style="color: Gray">iOS, iPadOS,macOS에 대한 추가 고려 사항이 없습니다.</c>
+<br>
+
+### tvOS
+레이어드 이미지는 Apple TV 사용자 경험의 핵심입니다.
+계층화된 이미지, 투명도, 크기 조정 및 모션을 결합하여 현실감과 활력을 생성합니다.
+
+**Parallax effect**<br>
+시차는 어떤 대상에 초점이 맞춰져 있을 때, 깊이와 역동성을 전달하는 데 사용하는 미묘한 시각 효과입니다. 대상에 초점이 맞춰지면 시스템이 대상을 전경으로 올려 부드럽게 흔들면서 요소의 표면이 빛나는 것처럼 보이게 하는 조명을 적용합니다. 일정 시간 동안 활동이 없으면 초점이 맞지 않는 콘텐츠가 흐려지고 초점이 맞춰진 요소가 확장됩니다. 이 시차 효과를 위해 레이어 밑의 설명에 나오는 이미지가 필요합니다.
+
+**Layered images**<br>
+레이어 이미지는 2~5개의 서로 다른 레이어가 모여 단일 이미지를 형성하는 것으로 구성됩니다. 투명도를 사용하여 레이어를 분리하여 깊이감을 줍니다. 사람들이 이미지와 상호 작용할 때 표면에 더 가까운 레이어가 앞으로 나오고 아래쪽 레이어가 더 뒤에 있는 것처럼 보이는 3D 효과를 생성합니다.
+
+<c style="color: SteelBlue">❗️ IMPORTANT<br>
+tvOS [App icons](/blog/appicons)은 레이어 이미지를 사용해야 합니다. [Top Shelf](https://developer.apple.com/design/human-interface-guidelines/components/system-experiences/top-shelf)이미지를 포함하여 앱에서 초점을 맞출 수 있는 다른 이미지의 경우 계층화된 이미지를 사용하는 것이 좋지만 권장사항입니다.</c><br>
+
+**tvOS 앱 아이콘은 레이어 이미지를 사용해야 합니다.** Top Shelf(상단 선반: 전체 화면 콘텐츠 보기를 스와이프하고 예고편과 미리 보기를 재생하고 추가 정보를 얻을 수 있는 상단 콘텐츠)이미지를 포함하여 앱에서 초점을 맞출 수 있는 다른 이미지의 경우 계층화된 이미지가 강력히 권장되지만 선택 사항입니다.
+
+**Use standard interface elements to display layered images.** 표준 인터페이스 요소를 사용하여 계층화된 이미지를 표시합니다. [FocusState](https://developer.apple.com/documentation/swiftui/focusstate) 와 같은 시스템 제공 API 및 표준 보기를 사용하는 경우 계층화된 이미지는 사람들이 초점을 맞출 때 자동으로 시차 효과를 줍니다.
+
+**Identify logical foreground, middle, and background elements.** 전경, 중간, 배경 요소를 논리적으로 선택합니다. 전경 레이어에서 게임의 캐릭터와 같은 눈에 띄는 요소를 표시하거나 앨범 표지 또는 영화 포스터의 텍스트를 표시합니다. 중간 레이어는 2차 콘텐츠 및 그림자와 같은 효과에 적합합니다. 배경 레이어는 전경과 중간 레이어에 집중도를 빼앗지 않고 보여주는 불투명한 배경입니다.
+
+**Generally, keep text in the foreground.** 일반적으로 텍스트를 전경에 두세요. 텍스트를 가리지 않으려면 명확성을 위해 전경 레이어로 가져옵니다.
+
+**Keep the background layer opaque. 배경 레이어를 불투명하게 유지합니다.** 다양한 수준의 불투명도를 사용한는 것은 괜찮지만, 배경 레이어는 불투명해야 합니다. 그렇지 않으면 오류가 발생합니다. 불투명한 배경 레이어는 아트웍이 시차, 그림자 및 시스템 배경으로 멋지게 보이도록 합니다.
+
+**Keep layering simple and subtle.** 레이어링을 단순하고 미묘하게 유지하십시오. 시차는 거의 눈에 띄지 않도록 설계되었습니다. 과도한 3D 효과는 비현실적이고 거슬리게 보일 수 있습니다. 콘텐츠에 생명을 불어넣고 즐거움을 더하려면 깊이를 단순하게 유지하세요.
+
+**Leave a safe zone around your content.** 콘텐츠 주변에 안전 영역을 두세요. 초점 및 시차가 생성되는 시간 동안 일부 레이어의 가장자리 주변 콘텐츠가 잘리거나 이미지 크기 조정 및 이동으로 인해 명확하게 보기 어려울 수 있습니다. 주요 콘텐츠가 항상 보이도록 하려면 가장자리에 너무 가까이 두지 마세요. 이미지 크기, 레이어 깊이 및 움직임에 따라 안전 영역이 다를 수 있으며 전경 레이어가 배경 레이어보다 더 많이 잘립니다.
+
+<center><img src="/images/post/images/images2.png" alt="icons-and-images-icon-safe-zone"></center><br>
+
+**Always preview layered images.** 항상 레이어 이미지를 미리보기 합니다. Apple TV에서 레이어된 이미지가 잘 보이도록 하려면 Xcode, macOS용 Parallax Previewer 앱 또는 Adobe Photoshop용 Parallax Exporter 플러그인을 사용하여 디자인 프로세스 전반에 걸쳐 이미지를 미리보기합니다. 크기 조정 및 클리핑이 발생할 때 특별한 주의를 기울이고 필요한 경우 이미지를 다시 조정하여 중요한 콘텐츠를 안전하게 유지하세요. 레이어링된 이미지가 최종 완성되면 실제 TV에서 미리보기하여 사람들이 보게 될 이미지를 확인하세요. Parallax Previewer 및 Parallax Exporter를 다운로드하려면 [Resource](https://developer.apple.com/design/resources/#tvos-apps)를 참고하세요.
+
+**Use both the unfocused and focused states to determine the appropriate size for a layered image.** 초점이 맞지 않은 상태와 초점이 맞춰진 상태를 모두 고려하여 계층화된 이미지에 적합한 크기를 결정합니다. 시차 효과가 나타날 시간 동안 시스템은 배경 레이어를 약간 자를 수 있으므로 필수 콘텐츠를 안전 영역 내에 유지하고 콘텐츠가 보기 좋게 보이도록 추가 공간을 포함합니다.
+
+<center><img src="/images/post/images/images3.png" alt="layered-image-zones"></center><br>
+
+다음 공식은 초점이 맞지 않을 때 이미지의 크기를 기반으로 계층화된 이미지의 크기를 계산하는 데 도움이 될 수 있습니다.
+
+<div class="table-container">
+  <table>
+    <tr><th>Image side</th><th>Focused/Safe zone size</th><th>Actual size</th></tr>
+    <tr><td>Longest</td><td>Length of longest unfocused side + 70 pt</td><td>Length of longest focused side x 106%</td></tr>
+    <tr><td>Shortest</td><td>Proportional based on longest side</td><td>Proportional based on longest side</td></tr>
+  </table>
+</div>
+
+- **Parallax Previewer app for macOS.** Parallax Previewer는 개별 레이어로 사용할 PNG 파일, Parallax Exporter 플러그인으로 만든 레이어 이미지(.lsr) 및 레이어 Photoshop 이미지(.psd)를 가져올 수 있습니다. Parallax Previewer는 Xcode 프로젝트로 직접 가져올 수 있는 LSR 파일을 내보낼 수 있습니다.
+
+- **Parallax Exporter Adobe Photoshop plug-in.** 이 플러그인을 사용하여 Photoshop에서 계층화된 이미지를 테스트하고 Xcode 프로젝트로 직접 가져올 수 있는 LSR 파일로 내보낼 수 있습니다.
+
+- **Xcode.** 표준 PNG 파일을 앱의 에셋 카탈로그로 드래그하여 Xcode에서 이미지 스택의 개별 레이어 역할을 합니다. 이미지 스택은 LSR 파일로 내보낼 수 있습니다. Xcode는 LSR 파일도 가져올 수 있습니다.
+
+앱이 런타임에 콘텐츠 서버에서 계층화된 이미지를 검색하는 경우 해당 이미지를 런타임 계층화된 이미지( .lcr) 형식으로 제공해야 합니다. 런타임 계층 이미지를 직접 만들지 않습니다. layerutilXcode가 제공하는 명령줄 도구를 사용하여 LSR 파일 또는 Photoshop 파일에서 생성 합니다. 런타임 계층 이미지는 다운로드를 위한 것이므로 앱에 포함하지 마십시오.
+
+### watchOS
+
+**In general, avoid transparency to keep image files small.** 일반적으로 이미지 파일을 작게 유지하려면 투명도를 피하십시오. 항상 동일한 단색 배경색으로 이미지를 합성하는 경우, 이미지에 배경을 포함하는 것이 더 효율적입니다.(용량적으로) 그러나 템플릿 이미지 역할을 하는 컴플리케이션 이미지, 메뉴 아이콘 및 기타 인터페이스 아이콘에서는 투명도가 시스템에서 사용하여 색상을 적용할 위치를 결정하기 때문에 투명도가 필요합니다.
+
+**Use autoscaling PDFs to let you provide a single asset for all screen sizes.** 자동 크기 조정 PDF를 사용하면 모든 화면 크기에 대해 단일 에셋을 제공할 수 있습니다40mm 및 42mm 화면용 이미지를 2배율로 디자인하십시오. PDF를 로드할 때 WatchKit은 아래 표시된 값을 사용하여 장치의 화면 크기에 따라 이미지 크기를 자동으로 조정합니다.
+
+<div class="table-container">
+  <table>
+    <tr><th>Screen size</th><th>Image scale</th></tr>
+    <tr><td>38mm</td><td>90%</td></tr>
+    <tr><td>40mm</td><td>100%</td></tr>
+    <tr><td>41mm</td><td>106%</td></tr>
+	<tr><td>42mm</td><td>100%</td></tr>
+	<tr><td>44mm</td><td>110%</td></tr>
+	<tr><td>45mm</td><td>119%</td></tr>
+  </table>
+</div>
+
+***
+
+## Resources
+#### Related
+[Apple Design Resources](https://developer.apple.com/design/resources/)<br>
+
+#### Developer documentation
+[UIImageView — UIKit](https://developer.apple.com/documentation/uikit/uiimageview)<br>
+[NSImageView — AppKit](https://developer.apple.com/documentation/appkit/nsimageview/)<br>
+[FocusState — SwiftUI](https://developer.apple.com/documentation/swiftui/focusstate)<br>
+
+#### Videos
+<div class="gallery-box">
+  <div class="video-gallery">
+    <a id="wwdc2017-821" href="/videos/play/wwdc2017/821/">
+		<img src="https://devimages-cdn.apple.com/wwdc-services/images/7/1915/1915_wide_250x141_2x.jpg" width="250" height="141"><br>
+		<b>Get Started with Display P3</b><br>
+		WWDC 2017
+	</a>
+  </div>
+</div>
