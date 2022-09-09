@@ -146,7 +146,7 @@ App Store의 경우 macOS 앱 아이콘의 1024x1024픽셀 버전을 만듭니�
 <div class="table-container">
   <table>
     <tr><th>@1x (pixels)</th><th>@2x (pixels)</th></tr>
-    <tr><td>512x512	</td><td>1024x1024</td></tr>
+    <tr><td>512x512</td><td>1024x1024</td></tr>
     <tr><td>256x256</td><td>512x512</td></tr>
     <tr><td>128x128</td><td>256x256</td></tr>
     <tr><td>32x32</td><td>64x64</td></tr>
