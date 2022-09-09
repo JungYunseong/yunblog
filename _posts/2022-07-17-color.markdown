@@ -13,7 +13,6 @@ tags:   [New_HIG, Foundations]
 ***
 
 # Color
-
 색상을 적절하게 사용하면 사용자와의 커뮤니케이션을 강화하고 브랜드를 부각시키며 시각적 연속성을 제공하고 상태 및 피드백을 전달하는 등 사용자들이 정보를 이해하는 데 도움이 됩니다.
 
 시스템은 다양한 환경에서 잘 보이는 색상을 보여주며, 자동으로 생동감과 사용자 접근성이 좋은 색상을 보여줍니다. 사용자들은 시스템이 보여주는 색상에 익숙하기 때문에 시스템 색상을 사용하는 것이 좋습니다.
@@ -21,7 +20,6 @@ tags:   [New_HIG, Foundations]
 또한 사용자 지정 색상을 사용하여 앱 또는 게임의 시각적 경험을 향상하고 앱의 고유한 개성을 표현할 수도 있습니다. 이번 Color HIG를 통해 개발자, 디자이너들은 사용자들에게 만족을 줄 수있는 색상을 선택하는데 도움을 줄 수있습니다.
 
 ## Best practices
-
 **Use color sparingly in nongame apps.** 게임이 아닌 앱에서는 색상을 보조로 사용하는 것이 좋습니다. 게임이 아닌 다른 앱에서 색상을 과도하게 사용하면 의사소통이 명확하지 않고 주의가 산만해질 수 있습니다. 중요한 정보에 주의를 환기시키거나 인터페이스 간의 관계를 나타내기 위해 색상을 사용하는 것이 좋습니다.
 
 **Avoid using the same color to mean different things.** 동일한 색상을 다른 의미로 사용하면 안됩니다. 인터페이스 전체에서 일관되게 색상을 사용하세요. 특히 상태나 사용자가 기기를 사용할때 중요한 정보를 전달하는 데 색상을 일관되게 사용하는 것이좋습니다. 예를 들어 파란색 텍스트를 사용자들에게 보여주면 이 텍스트를 탭하여 다른 View를 더 볼수 있다는 것을 알려줄 수 있습니다. 앱이 색상에 의존하지 않는 시각적 표시기(예: 갈매기 모양 또는 화살표 아이콘)를 사용하여 전달하는 경우에도 파란색 이외의 색상을 사용하게 되면 사용자들이 혼란을 느낄 수있습니다.
@@ -44,7 +42,6 @@ tags:   [New_HIG, Foundations]
 ***
 
 ## Inclusive color
-
 **Avoid relying solely on color to differentiate between objects, indicate interactivity, or communicate essential information.** 물체를 구별하거나, 상호 작용을 나타내거나, 필수 정보를 전달하기 위해 색상에만 의존하지 마십시오. 정보를 전달하기 위해 색상을 사용할 때 색맹 또는 기타 시각 장애가 있는 사람들이 이해할 수 있도록 동일한 정보를 다른 방법으로 제공해야 합니다. 예를 들어 레이블이나 글리프(특수문자) 모양을 사용하여 개체나 상태를 식별할 수 있습니다.
 
 **Avoid using colors that make it hard to perceive content in your app.** 앱의 콘텐츠를 인식하기 어렵게 만드는 색상을 사용하지 마세요. 예를 들어 대비가 충분하지 않으면 아이콘과 텍스트가 배경과 섞여 콘텐츠를 읽기 어렵게 만들 수 있으며 색맹인 사람은 인식하지 못할 수 있습니다. [Color and effects](https://developer.apple.com/design/human-interface-guidelines/foundations/accessibility/#color-and-effects)를  참고하세요.
@@ -54,7 +51,6 @@ tags:   [New_HIG, Foundations]
 ***
 
 ## System colors
-
 **Avoid hard-coding system color values in your app.** 앱에서 시스템 색상 값을 하드 코딩하지 마십시오. 문서화된 색상 값은 앱 디자인 과정에서 참조용입니다. 실제 색상 값은 다양한 환경 변수에 따라 변동될 수 있습니다. [Color](https://developer.apple.com/documentation/swiftui/color)와 같은 API를 사용하여 시스템 색상을 적용합니다.
 
 iOS 및 macOS는 light mode와 dark mode에 자동으로 적절한 색상 세트를 적용합니다. 예를 들어, 일부 색상은 다양한 계층에서 배경을 나타내고 다른 색상은 레이블, 링크 및 구분 기호와 같은 콘텐츠를 나타냅니다.
@@ -68,7 +64,6 @@ iOS 및 macOS는 light mode와 dark mode에 자동으로 적절한 색상 세트
 ***
 
 ## Color management
-
 색상 공간은 RGB 또는 CMYK와 같은 색상 모델의 색상을 나타냅니다. 색역이라고도 하는 일반적인 색 공간은 sRGB와 Display P3입니다.
 <c style="color: SteelBlue">Display P3 : 애플은 DCI-P3 색 영역을 기준으로 새롭게 만든 Display P3이라는 파생 규격을 사용하고 있습니다. 아이폰 7 이후로는 기본 사진앱으로 촬영한 모든 사진들은 P3 색 영역을 기본 색 영역으로 지정하고 있으며 애플은 서드 파티 개발자들에게 이 P3 색 영역에 맞게 앱들의 컬러 설정을 변경할 것을 적극 권유하는 등 기존의 sRGB에서 벗어난 광색역 환경 도입에 매우 적극적으로 나서고 있습니다.</c><br>
 <center><img src="/images/post/color/color4.png" alt="color-graphic-wide-color_2x"></center>
@@ -104,13 +99,10 @@ iOS는 시스템 및 그룹화된 두 가지 배경색들을 제공합니다. �
 - 전체 View 내에서 콘텐츠 또는 요소를 그룹화하기 위한 보조
 - 2차 요소 내에서 콘텐츠 또는 요소를 그룹화하기 위한 3차 요소
 
-한눈에 보이는 콘텐츠의 경우 iOS는 다음과 같은 [dynamic colors](https://developer.apple.com/design/human-interface-guidelines/foundations/color#:~:text=For%20foreground%20content%2C%20iOS%20defines%20the%20following%20dynamic%20colors%3A)을 정의합니다.
-<c style="color: Gray">위의 링크는 크롬에서 원활히 작동합니다.</c><br>
+한눈에 보이는 콘텐츠의 경우 iOS는 다음과 같은 [dynamic colors](https://developer.apple.com/design/human-interface-guidelines/foundations/color/#platform-considerations)을 정의합니다.
 
 ### macOS
-macOS는 다음과 같은 [dynamic system colors](https://developer.apple.com/design/human-interface-guidelines/foundations/color#:~:text=macOS%20defines%20the%20following%20dynamic%20system%20colors%20(you%20can%20also%20view%20them%20in%20the%20Developer%20palette%20of%20the%20standard%20Color%20panel)%3A)을 정의합니다.(표준 색상 패널의 개발자 팔레트에서도 볼 수 있음.)
-<c style="color: Gray">위의 링크는 크롬에서 원활히 작동합니다.</c><br>
-
+macOS는 다음과 같은 [dynamic system colors](https://developer.apple.com/design/human-interface-guidelines/foundations/color/#platform-considerations)을 정의합니다.
 
 ### App accent colors
 
@@ -150,8 +142,7 @@ macOS 11부터 accent color를 지정하여 앱 버튼, 강조 표시 및 사이
 
 ## Specifications
 ### iOS, iPadOS
-[System colors](https://developer.apple.com/design/human-interface-guidelines/foundations/color#:~:text=iOS%2C%20iPadOS-,System%20colors%20(iOS),-Default) (iOS, macOS, watchOS)
-<c style="color: Gray">위의 링크는 크롬에서 원활히 작동합니다.</c><br>
+[System colors](/blog/color/#system-colors) (iOS, macOS, watchOS)
 
 ***
 
