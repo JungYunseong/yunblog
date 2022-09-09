@@ -1,0 +1,125 @@
+---
+layout: post
+title:  Icons
+date:   2022-07-19 00:00:00 +0300
+image:  '/images/post/icons/thumbnail.png'
+tags:   [New_HIG, Foundations]
+---
+
+> ##### <center>안녕하세요 정윤성입니다.<br> 새로운 Human Interface Guidelines를 스터디를 통해 공부하며 정리하는 중입니다.</center>
+>
+> <cite>✏️ 스터디원: <a href="https://velog.io/@lawn/series/NEW-HIG-2022" target="_blank">@Lawn</a> | <a href="https://velog.io/@andana/series/Lets-Study-HIG" target="_blank">@Dana</a> | <a href="https://velog.io/@halogen/Apple-HIG-Foundation-Layout" target="_blank">@Halogen</a> | <a href="" target="_blank">@Choi</a></cite>
+
+***
+
+# Icons
+효과적인 아이콘은 하나의 개념을 사람들이 즉시 이해할 수 있도록 표현한 그래픽 요소입니다.<br>
+
+아이콘의 용도는 앱과 게임에서 사람들이 선택할 수 있는 항목, 작업 및 모드를 이해하는 데 도움이 되도록 하는 것입니다. [App Icons](/blog/appicons)는 음영, 질감 및 강조 표시와 같은 풍부한 시각적 세부 정보를 사용하여 앱의 개성을 나타낼 수 있는 반면, 인터페이스 속 아이콘은 일반적으로 간결한 모양과 색상 터치를 사용하여 간단한 아이디어를 전달합니다.<br>
+
+인터페이스 아이콘은 글리프 또는 템플릿 이미지 라고도 하는데 [SF Symbols](https://developer.apple.com/design/human-interface-guidelines/foundations/sf-symbols) 앱에서 기호를 선택하여 있는 그대로 사용하거나 필요에 맞게 사용자 지정할 수 있습니다. 인터페이스 아이콘과 기호는 모두 검정색과 선명한 색상을 사용하여 모양을 정의합니다. 시스템은 각 이미지의 검은색 영역에 다른 색상을 적용할 수 있습니다. SF Symbols를 참고하세요.
+
+## Best practices
+**Create a recognizable, highly simplified design.** 인식할 수 있고, 매우 단순화된 디자인을 만듭니다. 너무 많은 세부 정보를 인터페이스 아이콘에 나타내면 혼란스럽거나 읽을 수 없게 만들 수 있습니다. 대다수의 사람들이 빨리 알아볼 수 있게 하는 단순하고 보편적인 디자인을 하도록 노력하세요. 일반적으로 아이콘은 작업이나 내용과 직접적으로 관련된 친숙한 시각적인 은유(메타포)로 표현될 때 가장 잘 작동합니다.
+
+**Maintain visual consistency across all interface icons in your app.** 앱의 모든 인터페이스 아이콘에서 시각적 일관성을 유지하세요. 사용자 정의 아이콘만 사용하든, 시스템 제공 아이콘과 혼합하든 상관없이 앱의 모든 인터페이스 아이콘은 일관된 크기, 세부 수준, 획 두께(또는 두께) 및 원근을 사용해야 합니다. 아이콘의 시각적 가중치에 따라 다른 아이콘과 시각적으로 일치하도록 크기를 조정해야 할 수 있습니다.
+<center><img src="/images/post/icons/icons1.png" alt="icons"></center><br>
+
+**In general, match the weights of interface icons and adjacent text.** 일반적으로 인터페이스 아이콘과 가까운 텍스트의 가중치(시각적 무게)를 통일시킵니다. 아이콘이나 텍스트를 강조할 필요가 없는 경우, 두 가지 모두에 동일한 가중치를 사용하면 콘텐츠에 일관된 모양과 수준을 제공합니다.
+
+**If necessary, add padding to a custom interface icon to achieve optical alignment.** 필요한 경우, 정렬(시각적 정렬)을 맞추기 위해 사용자 정의 인터페이스 아이콘에 패딩을 추가합니다. 아이콘 중, 특히 비대칭적인 아이콘은 중앙에 배치되면 불균형적이게 보일 수 있습니다.
+<center><img src="/images/post/icons/icons2.png" alt="icons"></center><br>
+
+예를 들어, 위에 표시된 다운로드 아이콘은 위쪽보다 아래쪽에 더 많은 시각적 가중치가 있으므로 기하학적으로 중앙에 있으면 너무 낮게 보여 패딩을 통해 위쪽으로 조정할 수 있습니다.
+<center><img src="/images/post/icons/icons3.png" alt="icons"></center><br>
+
+시각적인 중심을 잡는 것은 일반적으로 앱 모양에 큰 영향을 미칠 수 있습니다.
+<center><img src="/images/post/icons/icons4.png" alt="icons"></center><br>
+
+**Provide a selected-state version of an interface icon only if necessary.** 필요한 경우에만 인터페이스 아이콘의 활성화 상태를 제공하세요. 자동으로 활성화를 나타낼 수 있는 아이콘(ex.SF Symbol)은 선택 및 선택되지 않았을 시의 모양을 따로 제공할 필요가 없습니다.
+<center><img src="/images/post/icons/icons5.png" alt="icons"></center><br>
+
+반면 iOS 도구 모음 및 탐색 모음(사이드바, iOS 탭 표시줄 및 macOS 도구 모음)은 활성화 형태를 제공하지 않아 앱의 강조 색상을 적용하거나 배경 모양을 추가하여 활성화 상태를 전달할 수 있도록 합니다.
+<center><img src="/images/post/icons/icons6.png" alt="icons"></center><br>
+
+**Create inclusive designs.** 포괄적인 디자인을 만듭니다. 특정 성별에 대한 불필요한 언급 없이 인물을 묘사하는 것을 선호하고, 아이콘이 모든 사람들에게 친숙하며 이해할 수 있어야 합니다. 지침은 [Inclusion](https://developer.apple.com/design/human-interface-guidelines/foundations/inclusion)을 참고하세요.
+<center><img src="/images/post/icons/icons7.png" alt="icons"></center><br>
+
+**Include text in your design only when it’s essential for conveying meaning.** 의미를 전달하는 데 필수적인 경우에만 디자인에 텍스트를 포함하십시오. 개념을 가장 직접적으로 전달해야 할 때에는 텍스트 형식을 나타내는 문자가 포함된 아이콘을 사용할 수 있습니다. 그리고 아이콘에 문자를 표시해야 하는 경우 해당 문자를 현지에 맞춰야 합니다. 또한 한 줄 정도의 문구를 통해 어떤 것을 제안해야 하는 경우에 추상적인(포괄적인) 표현을 사용하고, 컨텍스트가 오른쪽에서 왼쪽일 때 사용할 뒤집힌 버전의 아이콘도 포함해야 합니다. [Right-to-Left](https://developer.apple.com/design/human-interface-guidelines/foundations/right-to-left)를 참고하세요.
+
+**If you create a custom interface icon, use a vector format like PDF or SVG.** 사용자 정의 인터페이스 아이콘을 새로 만드는 경우, PDF 또는 SVG와 같은 벡터 형식을 사용하십시오. 시스템은 고해상도 디스플레이용 벡터 기반으로 인터페이스 아이콘의 크기를 자동으로 조정하여 고해상도 버전을 따로 제공할 필요가 없습니다. 하지만 음영, 텍스처 및 강조 표시와 같은 효과를 포함하는 앱 아이콘 및 기타 이미지에 사용되는 PNG 이미지는 크기 조정을 지원하지 않으므로 각 PNG 기반 인터페이스 아이콘에 대해 여러 버전을 제공해야 합니다. 또는 사용자 정의 [SF 기호](https://developer.apple.com/design/human-interface-guidelines/foundations/sf-symbols)를 만들고, 기호가 적합한 텍스트와 일치하도록 범위을 지정할 수 있습니다. 지침은 SF Symbols를 참고하세요.
+
+**Provide alternative text labels for custom interface icons.** 사용자 정의 인터페이스 아이콘에 대한 대체 텍스트 레이블을 제공합니다. 대체 텍스트 레이블 또는 손쉬운 사용 설명은 표시되지 않지만 VoiceOver가 화면에 표시되는 내용을 읽을 수 있도록 하여 시각 장애가 있는 사용자의 편의를 돕습니다. [Content Descriptions](https://developer.apple.com/design/human-interface-guidelines/foundations/accessibility/#content-descriptions)을 참고하세요
+
+**Avoid using replicas of Apple hardware products.** Apple 하드웨어 제품의 복제본을 사용하지 마십시오. 하드웨어 디자인은 자주 변경되는 경향이 있으며 인터페이스 아이콘 및 기타 콘텐츠가 오래된 것처럼 보일 수 있습니다. Apple 하드웨어를 표시해야 하는 경우 [Apple Design Resource](https://developer.apple.com/design/resources/)에서 사용할 수 있는 이미지 또는 다양한 Apple 제품을 나타내는 SF 기호만 사용하십시오.
+
+***
+
+## Platform considerations
+<c style="color: Gray">iOS, iPadOS, tvOS 또는 watchOS에 대한 추가 고려 사항이 없습니다.</c>
+<br>
+
+### iOS, iPadOS
+다크 모드에서 시스템은 화면 위에 화면으로써, 인터페이스 레이어가 쌓일 경우 (예를 들어, 시트나 모달) 1층 화면에는 '베이스 다크모드 세트 색상'이 적용되고, 그 위 화면에는 좀더 밝은 '높은 다크모드 세트 색상'이 적용되어 레이어간의 깊이감을 줍니다. 그래서 사용자가 배경색을 일일히 지정하기보다, 시스템 배경색 (system background colors)을 사용하여 레이어가 쌓이는 여러가지 상황에 자연스러운 깊이감으로 적용되도록 하세요.
+
+### macOS
+#### Document icons
+macOS 앱에서 사용자 정의 문서 유형을 사용할 수 있는 경우 이를 나타내는 문서 아이콘을 생성할 수 있습니다. 일반적으로 문서 아이콘은 오른쪽 위 모서리가 접힌 종이 조각처럼 보입니다. 이 독특한 모양은 아이콘 크기가 작은 경우에도 사람들이 문서를 앱 및 기타 콘텐츠와 구별하는 데 도움이 됩니다.
+
+지원하는 파일 유형에 대한 문서 아이콘을 제공하지 않으면 macOS는 앱 아이콘과 파일 확장자를 캔버스에 합성하여 아이콘을 생성합니다. 예를 들어 미리 보기는 시스템 생성 문서 아이콘을 사용하여 JPG 파일을 나타냅니다.
+<center><img src="/images/post/icons/icons8.png" alt="icons"></center><br>
+
+경우에 따라 앱에서 처리하는 파일 형식의 범위를 나타내는 문서 아이콘 세트를 만들어두면, 경우에 따라 구별하기 편리합니다. 예를 들어 Xcode는 사용자 정의 문서 아이콘을 사용하여 사람들이 프로젝트, AR 개체 및 Swift 코드 파일을 구별하는 데 도움을 주는 것과 같습니다.
+<center><img src="/images/post/icons/icons9.png" alt="icons"></center><br>
+
+사용자 정의 문서 아이콘을 생성하기 위해 배경 채우기, 중앙 이미지 및 텍스트의 조합을 사용할 수 있습니다. macOS 11부터 시스템은 이러한 요소를 필요에 따라 레이어, 위치 지정 및 마스크하고 친숙한 접힌 모서리 아이콘 모양으로 합성합니다.
+<center><img src="/images/post/icons/icons10.png" alt="icons"></center><br>
+
+[Apple Design Resources](https://developer.apple.com/design/resources/#macos-apps)는 문서 아이콘에 대한 사용자 정의 배경 채우기 및 중앙 이미지를 생성하는 데 사용할 수 있는 템플릿을 제공합니다.
+
+**Design simple images that clearly communicate the document type.** 문서 유형을 명확하게 전달하는 단순한 이미지를 디자인합니다. 배경 채우기, 중앙 이미지 또는 둘 다를 사용하든, 복잡하지 않은 모양과 고유한 색상으로 축소된 팔레트를 선호합니다. 문서 아이콘은 16x16픽셀만큼 작게 표시할 수 있으므로 모든 크기에서 인식할 수 있는 디자인을 만들어야 합니다.
+
+**Designing a single, expressive image for the background fill can be a great way to help people understand and recognize a document type.**하나의 잘 표현된 배경 채우기 이미지를 디자인하면, 사람들이 문서 유형을 이해하고 인식하는 데 도움이 될 수 있습니다. 예를 들어 Xcode와 TextEdit는 모두 중앙 이미지를 포함하지 않는 풍부한 배경 이미지를 사용합니다.
+<center><img src="/images/post/icons/icons11.png" alt="icons"></center><br>
+
+**Consider reducing complexity in the small versions of your document icon.** 문서 아이콘의 사이즈가 작은 버전에서 단순하게 만드는 것이 좋습니다. 아이콘 디자인에 따라 큰 버전에서는 세부 정보가 흐릿하게 보이고, 작은 버전에서는 인식하기 어려울 수 있습니다. 예를 들어, 사용자 정의 하트 문서 아이콘의 격자선이 중간 크기에서 명확하게 유지되도록 하려면 더 적은 수의 선을 사용하고 축소된 픽셀 격자에 정렬하여 굵게 할 수 있습니다. 16x16픽셀 크기에서는 선을 모두 제거할 수 있습니다.
+<center><img src="/images/post/icons/icons12.png" alt="icons"></center><br>
+
+**Avoid placing important content in the top-right corner of your background fill.** 배경의 오른쪽 상단 모서리에 중요한 콘텐츠를 배치하지 마십시오. 시스템은 문서 아이콘 모양에 맞게 이미지를 자동으로 마스크하고 채우기 위에 흰색 접힌 모서리를 그립니다. 아래 나열된 크기의 배경 이미지 세트를 만듭니다.
+
+- 512x512 px @1x, 1024x1024 px @2x
+- 256x256 px @1x, 512x512 px @2x
+- 128x128 px @1x, 256x256 px @2x
+- 32x32 px @1x, 64x64 px @2x
+- 16x16 px @1x, 32x32 px @2x
+
+**If a familiar object can convey a document’s type or its connection with your app, consider creating a center image that depicts it.** 문서의 유형 또는 앱과의 연결을 전달할 수 있는 친숙한 개체가 있는 경우, 문서를 묘사하는 중앙 이미지를 만드는 것이 좋습니다. 모든 크기에서 명확하고 알아볼 수 있는 단순하고 모호하지 않은 이미지를 디자인합니다. 중앙 이미지는 전체 문서 아이콘 캔버스 크기의 절반을 측정합니다. 예를 들어 32x32픽셀 문서 아이콘의 중앙 이미지를 만들려면 16x16픽셀 크기의 이미지 캔버스를 사용합니다. 다음 크기의 중앙 이미지를 제공할 수 있습니다.
+
+- 256x256 px @1x, 512x512 px @2x
+- 128x128 px @1x, 256x256 px @2x
+- 32x32 px @1x, 64x64 px @2x
+- 16x16 px @1x, 32x32 px @2x
+
+**Define a margin that measures about 10% of the image canvas and keep most of the image within it.** 이미지 캔버스의 약 10%의 여백을 측정하고, 여백 안에 이미지의 대부분을 유지합니다. 이미지의 일부가 시각적 정렬을 위해 이 여백으로 확장될 수 있지만 이미지가 이미지 캔버스의 약 80%를 차지할 때 가장 좋습니다. 예를 들어, 256x256픽셀 캔버스에 있는 대부분의 중앙 이미지는 205x205픽셀 크기의 영역에 맞춥니다.
+<center><img src="/images/post/icons/icons13.png" alt="icons"></center><br>
+
+**Specify a succinct term if it helps people understand your document type.** 사람들이 문서 유형을 이해하는 데 도움이 되는 경우, 간결한 용어를 지정하십시오. 기본적으로 시스템은 문서 아이콘의 아래쪽 가장자리에 문서의 확장자를 표시하지만 확장자가 익숙하지 않은 경우 더 설명적인 용어를 제공할 수 있습니다. 예를 들어 SceneKit 장면 파일의 문서 아이콘 은 파일 확장명 scn 대신 scene 이라는 용어를 사용합니다. 시스템은 문서 아이콘에 맞게 확장 텍스트의 크기를 자동으로 조정하므로 작은 크기에서도 읽을 수 있을 만큼 짧은 용어를 사용해야 합니다. 기본적으로 시스템은 텍스트의 모든 문자를 대문자로 표시합니다.
+<center><img src="/images/post/icons/icons14.png" alt="icons"></center>
+
+***
+
+## Resources
+#### Related
+[App icons](/blog/appicons)<br>
+[SF Symbols](https://developer.apple.com/design/human-interface-guidelines/foundations/sf-symbols)<br>
+
+#### Videos
+<div class="gallery-box">
+  <div class="video-gallery">
+    <a id="wwdc2017-823" href="/videos/play/wwdc2017/823/">
+		<img src="https://devimages-cdn.apple.com/wwdc-services/images/7/1914/1914_wide_250x141_2x.jpg" width="250" height="141"><br>
+		<b>Designing Glyphs</b><br>
+		WWDC 2017
+	</a>
+  </div>
+</div>
