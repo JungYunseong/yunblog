@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  Color
-date:   2022-07-11 00:00:00 +0300
+date:   2022-07-17 00:00:00 +0300
 image:  '/images/post/color/thumbnail.png'
 tags:   [New_HIG, Foundations]
 ---
@@ -26,7 +26,7 @@ tags:   [New_HIG, Foundations]
 
 **Avoid using the same color to mean different things.** 동일한 색상을 다른 의미로 사용하면 안됩니다. 인터페이스 전체에서 일관되게 색상을 사용하세요. 특히 상태나 사용자가 기기를 사용할때 중요한 정보를 전달하는 데 색상을 일관되게 사용하는 것이좋습니다. 예를 들어 파란색 텍스트를 사용자들에게 보여주면 이 텍스트를 탭하여 다른 View를 더 볼수 있다는 것을 알려줄 수 있습니다. 앱이 색상에 의존하지 않는 시각적 표시기(예: 갈매기 모양 또는 화살표 아이콘)를 사용하여 전달하는 경우에도 파란색 이외의 색상을 사용하게 되면 사용자들이 혼란을 느낄 수있습니다.
 
-- **Make sure your app’s colors work well in both light and dark appearance modes.** 앱의 색상이 light mode와 dark mode에 둘다 잘 적용되는지 확인하세요. 항상 검정색 배경을 사용하는 watchOS를 제외하고 플랫폼은 기본 mode 외에도 dark mode를 제공합니다. 다크 모드는 모든 화면, 보기, 메뉴 및 컨트롤에 더 어두운 색상 팔레트를 사용하며 전경색과 배경색을 혼합해 생동감을 높여 전경 콘텐츠가 더 어두운 배경에 비해 눈에 띄게 만들 수 있습니다. 시스템 색상은 자동으로 두 가지 모드에서의 색을 모두 지원합니다. 사용자 정의 색상을 사용하는 경우 밝은 색상과 어두운 색상을 모두 제공해야 합니다. [Dark Mode](https://developer.apple.com/design/human-interface-guidelines/foundations/dark-mode)를 참조하세요.
+**Make sure your app’s colors work well in both light and dark appearance modes.** 앱의 색상이 light mode와 dark mode에 둘다 잘 적용되는지 확인하세요. 항상 검정색 배경을 사용하는 watchOS를 제외하고 플랫폼은 기본 mode 외에도 dark mode를 제공합니다. 다크 모드는 모든 화면, 보기, 메뉴 및 컨트롤에 더 어두운 색상 팔레트를 사용하며 전경색과 배경색을 혼합해 생동감을 높여 전경 콘텐츠가 더 어두운 배경에 비해 눈에 띄게 만들 수 있습니다. 시스템 색상은 자동으로 두 가지 모드에서의 색을 모두 지원합니다. 사용자 정의 색상을 사용하는 경우 밝은 색상과 어두운 색상을 모두 제공해야 합니다. [Dark Mode](https://developer.apple.com/design/human-interface-guidelines/foundations/dark-mode)를 참조하세요.
 
 <c style="color: MediumSeaGreen"> 📢Lawn: 전경색은 앞쪽 색상 배경색은 뒤에 배치되는 색입니다. 포토샵같은 경우 밑의 사진처럼 전경색과 배경색을 지정할 수있습니다.</c>
 <center><img src="/images/post/color/color1.png" alt="Photoshop"></center>
@@ -157,7 +157,7 @@ macOS 11부터 accent color를 지정하여 앱 버튼, 강조 표시 및 사이
 
 ## Resources
 #### Related
-[Dark Mode](https://developer.apple.com/design/human-interface-guidelines/foundations/dark-mode)<br>
+[Dark Mode](/blog/darkmode)<br>
 [Accessibility](/blog/accessibility)<br>
 
 #### Developer documentation
