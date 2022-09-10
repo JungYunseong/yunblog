@@ -1,6 +1,6 @@
 ---
 title: Real Punch
-date: 4-07-24 07:40:35 +0300
+date: 2-07-24 07:40:35 +0300
 subtitle: IOS Development
 image: '/images/project/realPunch/thumbnail.png'
 ---
