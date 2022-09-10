@@ -1,6 +1,6 @@
 ---
 title: Saladaeng One
-date: 1-11-30 08:00:35 +0300
+date: 2018-11-30 08:00:35 +0300
 subtitle: CG Arts
 image: '/images/project/saladaeng one/saladaeng one6.jpg'
 ---

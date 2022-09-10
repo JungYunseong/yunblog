@@ -1,6 +1,6 @@
 ---
 title: Sunset Kitchen
-date: 2-01-20 11:15:00 +0300
+date: 2019-01-20 11:15:00 +0300
 subtitle: CG Arts
 image: '/images/project/sunset kitchen/sunset kitchen.jpg'
 ---

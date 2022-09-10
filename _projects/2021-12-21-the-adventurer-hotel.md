@@ -1,6 +1,6 @@
 ---
 title: The Adventurer Hotel
-date: 5-12-21 13:30:00 +0300
+date: 2-12-21 13:30:00 +0300
 subtitle: CG Arts
 image: '/images/project/the adventurer hotel/the adventurer hotel_1.jpg'
 ---
