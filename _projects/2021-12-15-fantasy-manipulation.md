@@ -1,6 +1,6 @@
 ---
 title: Fantasy Manipulation
-date: 3-12-15 18:45:00 +0300
+date: 2021-12-15 18:45:00 +0300
 subtitle: Concept Art
 image: '/images/project/fantasy manipulation/fantasy manipulation.jpg'
 ---
