@@ -56,7 +56,7 @@ Real Punch의 최신 버전을 [앱스토어](https://apple.co/3PmMR0R)에서 �
 ## License
 [APACHE 2.0](https://github.com/CHAAM-Company/RealPunch-Docs/blob/main/LICENSE)
 
-<iframe title="vimeo-player" src="https://player.vimeo.com/video/748313728?h=61e092d4cc" width="640" height="360" frameborder="0" allowfullscreen></iframe>
-
 ## Github
 [Github 링크](https://github.com/CHAAM-Company/RealPunch-Docs)
+
+<iframe title="vimeo-player" src="https://player.vimeo.com/video/748313728?h=61e092d4cc" width="640" height="360" frameborder="0" allowfullscreen></iframe>
