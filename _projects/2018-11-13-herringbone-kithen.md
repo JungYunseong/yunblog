@@ -1,6 +1,6 @@
 ---
 title: Herringbone Kithen
-date: 2018-11-13 11:16:00 +0300
+date: 6-11-13 11:16:00 +0300
 subtitle: CG Arts
 image: '/images/project/herringbone kitchen/herringbone kitchen_1.jpg'
 ---

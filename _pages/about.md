@@ -4,7 +4,8 @@ title: About
 image: '/images/15.jpg'
 ---
 
-반갑습니다! 제 이름은 정윤성입니다. 저는 기획, 디자인, 개발 모든 것을 다 하는 풀스택 디자이너를 꿈꾸는 대학생입니다. 현재 애플 디벨로퍼 아카데미 과정을 진행 중이며, 대학과 아카데미 생활을 통해 길러온 전문성, 창의성,  협업 능력, 비판 수용 능력 등을 활용해 다양한 분야에 도전하고 있습니다. UX 관점에서 서비스 기획을 하기 위해 노력 중입니다.
+안녕하세요! 제 이름은 정윤성입니다. 저는 제가 만든 프로덕트가 세상에 긍정적인 영향을 미치고, 사람들이 실제로 사용하는 모습을 보는 것에 즐거움을 느낍니다. 현재는 Apple Developer Academy @ POSTECH에서 다양한 프로젝트를 진행하며, 문제를 찾고 해결하는 능력과 팀원들과 함께 협업하는 능력을 키우고 있습니다.
+
 
 <!-- ![Loneliness]({{site.baseurl}}/images/30.jpg)
 *Photo by [Grace Madeline](https://unsplash.com/@grxcemadeline) on Unsplash*

@@ -1,6 +1,6 @@
 ---
 title: Yellow Cap
-date: 6-08-05 07:40:35 +0300
+date: 2022-08-05 07:40:35 +0300
 subtitle: IOS Development
 image: '/images/project/yellowCap/yellowCap.png'
 ---

@@ -1,6 +1,6 @@
 ---
 title: How Old Am I
-date: 5-09-02 07:40:35 +0300
+date: 2022-09-02 07:40:35 +0300
 subtitle: IOS Development
 image: '/images/project/howOldAmI/thumbnail.png'
 ---
